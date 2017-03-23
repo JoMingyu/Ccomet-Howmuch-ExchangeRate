@@ -9,13 +9,13 @@ class Database:
     charset = 'utf8'
 
     def __init__(self):
-        connection = pymysql.connect(host=self.host, port=self.port, user=self.user, passwd=self.passwd, db=self.db, charset=self.charset)
-        cursor = connection.cursor()
+        self.connection = pymysql.connect(host=self.host, port=self.port, user=self.user, passwd=self.passwd, db=self.db, charset=self.charset)
+        self.cursor = self.connection.cursor()
 
     def execute(self, *args):
-        query = ''
+        self.query = ''
         for arg in args:
-            query += arg
+            self.query += arg
 
         # print(query)
 
