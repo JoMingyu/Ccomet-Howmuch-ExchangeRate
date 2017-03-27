@@ -32,12 +32,14 @@ class Database:
             query += arg
 
         try:
-            if 'INSERT' in query:
-                self.cursor.execute(query)
-                result = self.connection.commit()
-            elif 'SELECT' in query:
+            if 'SELECT' in query:
+                # SELECT문은 fetchall() 메소드 적용
                 self.cursor.execute(query)
                 result = self.cursor.fetchall()
+            else:
+                # INSERT, UPDATE, DELETE문은 commit() 메소드 적용
+                self.cursor.execute(query)
+                result = self.connection.commit()
 
             return result
         except IntegrityError:
