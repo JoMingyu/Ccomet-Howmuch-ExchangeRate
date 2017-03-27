@@ -27,13 +27,17 @@ class Database:
         self.cursor = self.connection.cursor()
 
     def execute(self, *args):
-        self.query = ''
+        query = ''
         for arg in args:
-            self.query += arg
+            query += arg
 
         try:
-            result = self.cursor.execute(self.query)
-            self.connection.commit()
+            if 'INSERT' in query:
+                self.cursor.execute(query)
+                result = self.connection.commit()
+            elif 'SELECT' in query:
+                self.cursor.execute(query)
+                result = self.cursor.fetchall()
 
             return result
         except IntegrityError:
