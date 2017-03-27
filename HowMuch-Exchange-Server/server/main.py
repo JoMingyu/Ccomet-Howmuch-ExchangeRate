@@ -1,15 +1,10 @@
 from flask import Flask
 from flask import request, make_response
 from flask import json
-import json
 from database import Database
 
 app = Flask(__name__)
 db = Database()
-db2 = Database()
-
-print(id(db))
-print(id(db2))
 
 # @app.route('/', methods=['POST'])
 # def index():
