@@ -1,7 +1,6 @@
+from account import Account
 from flask import Flask
 from flask_restful import Api
-
-from account import Account
 
 app = Flask(__name__)
 api = Api(app)
