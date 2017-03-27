@@ -30,4 +30,7 @@ class Database:
         for arg in args:
             self.query += arg
 
-        return self.cursor.execute(self.query)
+        result = self.cursor.execute(self.query)
+        self.connection.commit()
+
+        return result
