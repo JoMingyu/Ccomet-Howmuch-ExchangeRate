@@ -1,6 +1,10 @@
 import account
+
 from flask import Flask
 from flask_restful import Api
+
+import crypto_supporter
+
 from database import Database
 
 app = Flask(__name__)

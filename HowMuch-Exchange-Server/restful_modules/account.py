@@ -33,6 +33,7 @@ class SignUp(Resource):
                 # uuid 중복 시
                 return '', 409
             else:
+                # uuid 미중복 시
                 rows = self.db.execute("SELECT * FROM account WHERE id='", id, "'")
                 if rows:
                     # id 중복 시
