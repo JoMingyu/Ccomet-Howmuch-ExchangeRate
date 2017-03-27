@@ -4,12 +4,12 @@ class Database:
     host = 'localhost'
     port = 3306
     user = 'root'
-    passwd = ''
+    password = ''
     db = 'howmuch_exchange'
     charset = 'utf8'
 
     def __init__(self):
-        self.connection = pymysql.connect(host=self.host, port=self.port, user=self.user, passwd=self.passwd, db=self.db, charset=self.charset)
+        self.connection = pymysql.connect(host=self.host, port=self.port, user=self.user, password=self.password, db=self.db, charset=self.charset)
         self.cursor = self.connection.cursor()
 
     def execute(self, *args):
