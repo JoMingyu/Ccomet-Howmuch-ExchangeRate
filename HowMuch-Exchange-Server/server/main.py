@@ -9,10 +9,10 @@ db = Database()
 @app.route('/', methods=['POST'])
 def index():
     tempvalue = 4
-    data = {
-        'test' : tempvalue,
-        'test2' : 'jsondata'
-    }
+    data = [
+        {'test' : tempvalue},
+        {'test2' : 'jsondata'}
+    ]
     return json.dumps(data)
 
 if __name__ == '__main__':
