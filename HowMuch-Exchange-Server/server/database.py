@@ -1,13 +1,20 @@
 import pymysql
 
 class Database:
-
     host = 'localhost'
     port = 3306
     user = 'root'
     password = ''
     db = 'howmuch_exchange'
     charset = 'utf8'
+
+    _instance = None
+
+    def __new__(cls):
+        if not cls._instance:
+            cls._instance = super(Database, cls).__new__(cls)
+
+        return cls._instance
 
     def __init__(self):
         self.connection = pymysql.connect(host=self.host,
