@@ -1,8 +1,12 @@
 from flask import Flask
-from flask import request, make_response
-from flask import json
+from flask_restful import Api
+
+from account import Account
 
 app = Flask(__name__)
+api = Api(app)
+
+api.add_resource(Account, '/account')
 
 if __name__ == '__main__':
     print('서버 시작')
