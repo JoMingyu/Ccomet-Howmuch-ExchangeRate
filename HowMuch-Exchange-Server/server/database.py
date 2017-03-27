@@ -1,4 +1,5 @@
 import pymysql
+from pymysql import IntegrityError
 
 class Database:
     host = 'localhost'
@@ -30,7 +31,11 @@ class Database:
         for arg in args:
             self.query += arg
 
-        result = self.cursor.execute(self.query)
-        self.connection.commit()
+        try:
+            result = self.cursor.execute(self.query)
+            self.connection.commit()
 
-        return result
+            return result
+        except IntegrityError:
+            # 문제 발생 시
+            return False
