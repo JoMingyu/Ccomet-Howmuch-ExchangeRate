@@ -10,11 +10,11 @@ db = Database()
 @app.route('/', methods=['POST'])
 def index():
     tempvalue = 4
-    data = [
-        {'test' : tempvalue},
-        {'test2' : 'jsondata'}
-    ]
-    return json.dumps(data)
+    data = {
+        'test' : tempvalue,
+        'test2' : 'jsondata'
+    }
+    return json.dumps(data, indent=4)
 
 if __name__ == '__main__':
     print('서버 시작')
