@@ -51,4 +51,20 @@ class SignUp(Resource):
 
 class SignIn(Resource):
     # 로그인
-    pass
+    # SNS 미연결 시
+    db = Database()
+    def post(self):
+        id = request.form['id']
+        password = request.form['password']
+
+        rows = self.db.execute("SELECT * FROM account WHERE id='", id, "'")
+        if rows:
+            # id에 해당하는 계정 존재
+            if rows[0][3] == password:
+                # 로그인 성공
+                return '', 201
+            else:
+                return '', 404
+        else:
+            # 계정 미존재
+            return '', 404
