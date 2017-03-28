@@ -27,8 +27,6 @@ class Option(Resource):
             percentage_datum_point = float(request.form['percentage_datum_point'])
             # 기준점(고정값/현재까지 평균/이번주 평균/현재까지 최고가/현재까지 최저가)
 
-            print(fall_percentage, rise_percentage, percentage_datum_point)
-
             if self.row_exists(uuid, src_nation, dst_nation):
                 # 이미 uuid : src_nation-dst_nation에 대응되는 row가 있는 경우
                 query = "UPDATE options SET fall_percentage=%f, rise_percentage=%f, percentage_datum_point=%f WHERE uuid='%s' AND src_nation='%s' AND dst_nation='%s'"
@@ -40,8 +38,21 @@ class Option(Resource):
                 self.db.execute(query % (uuid, src_nation, dst_nation, fall_percentage, rise_percentage, percentage_datum_point))
                 return '', 201
 
-        elif option_name == '':
-            pass
+        elif option_name == 'fixed_value':
+            fixed_value_lower_limit = float(request.form['fixed_value_lower_limit'])
+            # 하한선 아래로 내려갔을 때 푸쉬알림
+
+            fixed_value_upper_limit = float(request.form['fixed_value_upper_limit'])
+            # 상한선 위로 올라갔을 때 푸쉬알림
+
+            if self.row_exists(uuid, src_nation, dst_nation):
+                query = "UPDATE options SET fixed_value_lower_limit=%f, fixed_value_upper_limit=%f WHERE uuid='%s' AND src_nation='%s' AND dst_nation='%s'"
+                self.db.execute(query % (fixed_value_lower_limit, fixed_value_upper_limit, uuid, src_nation, dst_nation))
+                return '', 201
+            else:
+                query = "INSERT INTO options(uuid, src_nation, dst_nation, fixed_value_lower_limit, fixed_value_upper_limit) VALUES('%s', '%s', '%s', %f, %f)"
+                self.db.execute(query % (uuid, src_nation, dst_nation, fixed_value_lower_limit, fixed_value_upper_limit))
+                return '', 201
 
     @staticmethod
     def row_exists(uuid, src_nation, dst_nation):
