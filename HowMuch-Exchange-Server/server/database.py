@@ -1,6 +1,9 @@
 import pymysql
 from pymysql import IntegrityError
 
+# Created by planb 2017. 03. 28
+# db = Database()
+# db.execute("SELECT FROM table_name WHERE column='", column_name, "')")
 class Database:
     host = 'localhost'
     port = 3306
@@ -24,7 +27,7 @@ class Database:
                                           password=self.password,
                                           db=self.db,
                                           charset=self.charset)
-        self.cursor = self.connection.cursor()
+        self.cursor = self.connection.cursor(pymysql.cursors.DictCursor)
 
     def execute(self, *args):
         query = ''

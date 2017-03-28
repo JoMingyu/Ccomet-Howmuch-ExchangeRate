@@ -1,9 +1,8 @@
 import account
+import option
 
 from flask import Flask
 from flask_restful import Api
-
-import crypto_supporter
 
 from database import Database
 
@@ -12,6 +11,7 @@ api = Api(app)
 
 api.add_resource(account.SignUp, '/signup')
 api.add_resource(account.SignIn, '/signin')
+api.add_resource(option.Option, '/option')
 
 def clear_tables():
     Database().execute("delete from account")
@@ -22,4 +22,5 @@ def clear_tables():
 
 if __name__ == '__main__':
     print('서버 시작')
+    print('--- resources ---')
     app.run('10.156.145.120')

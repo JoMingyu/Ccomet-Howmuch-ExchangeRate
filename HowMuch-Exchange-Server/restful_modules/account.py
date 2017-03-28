@@ -1,7 +1,6 @@
 from flask_restful import Resource
-from flask import request, make_response
+from flask import request
 from database import Database
-from cryptography.fernet import Fernet
 
 class SignUp(Resource):
     # 회원가입
@@ -60,7 +59,7 @@ class SignIn(Resource):
         rows = self.db.execute("SELECT * FROM account WHERE id='", id, "'")
         if rows:
             # id에 해당하는 계정 존재
-            if rows[0][3] == password:
+            if rows[0]['password'] == password:
                 # 로그인 성공
                 return '', 201
             else:
