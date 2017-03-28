@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">HowMuch-Exchange-App</string>
+    <string name="server_client_id">111981686123-um2lib7g4urb5cbubtngafe7uhc75vi2.apps.googleusercontent.com</string>
+    <string name="facebook_app_id">1889074367976183</string>
 </resources>
