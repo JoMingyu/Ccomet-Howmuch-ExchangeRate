@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="#88333333"
+    android:id="@+id/logindialog_linear"
+    tools:context="com.ccomet.howmuch_exchange_app.LoginActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로그인이 필요합니다"
+        android:textSize="15dp"
+        android:textColor="#FFFFFF"/>
+
+    <com.ccomet.howmuch_exchange_app.LoginButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/register_button"
+        app:bg="@drawable/register"
+        app:symbol="@mipmap/ic_launcher"
+        app:text="회원 가입"
+        app:textColor="@color/White"/>
+
+
+</LinearLayout>

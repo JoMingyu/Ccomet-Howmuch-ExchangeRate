@@ -21,22 +21,25 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.2.0'
 
     //Dependency for Google Sign-in
-    compile 'com.google.android.gms:play-services-auth:10.2.0'
+    
 
     //Dependencies for the REST API
+    
+    //Dependency for Firebase
+    
+    //Dependency for Facebook Sign in
+    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.google.android.gms:play-services-auth:10.2.0'
     compile 'com.google.api-client:google-api-client:1.22.0'
     compile 'com.google.api-client:google-api-client-android:1.22.0'
     compile 'com.google.apis:google-api-services-people:v1-rev4-1.22.0'
-
-    //Dependency for Firebase
     compile 'com.google.firebase:firebase-core:10.0.1'
-
-    //Dependency for Facebook Sign in
     compile 'com.facebook.android:facebook-android-sdk:4.+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
 }
+
 
 apply plugin: 'com.google.gms.google-services'
