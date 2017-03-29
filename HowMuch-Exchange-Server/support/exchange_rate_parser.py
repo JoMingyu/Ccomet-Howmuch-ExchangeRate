@@ -1,5 +1,6 @@
 import requests
 import json
+import pymysql
 
 class Parser:
     _instance = None
@@ -17,6 +18,21 @@ class Parser:
         self.code_string = country_codes
         self.code_list = list
         self.APIUrl = "https://api.manana.kr/exchange/rate/"
+
+        #insert passwrod
+        self.conn = pymysql.connect(host='localhost',   user='',
+                                    password='',        db='parser',
+                                    charset='utf8')
+        self.curs = self.conn.cursor()
+
+    def main(self):
+        for country in self.code_list:
+
+            data = self.get_currency(country)
+            rate_list = self.process_data(data.decode("utf-8"))
+
+            for currencyInfo in rate_list:
+                self.insert_data(currencyInfo)
 
     def get_currency(self, src):
         response = requests.get(self.APIUrl + src + "/" + self.code_string + ".json")
@@ -42,3 +58,12 @@ class Parser:
             tupleList.append(data)
 
         return tupleList
+
+    def insert_data(self, currencyInfo):
+        query = "INSERT INTO test (src, dct, rate) VALUES ('{0}', '{1}', '{2}')".format(currencyInfo[0], currencyInfo[1], currencyInfo[2])
+        self.curs.execute(query)
+        self.conn.commit()
+
+if __name__ == '__main__':
+    p = Parser()
+    p.main()
