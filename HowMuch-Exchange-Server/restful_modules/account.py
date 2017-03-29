@@ -1,6 +1,7 @@
 from flask_restful import Resource
 from flask import request
 from database import Database
+import query_formats
 
 class SignUp(Resource):
     # 회원가입
@@ -18,7 +19,7 @@ class SignUp(Resource):
                 return '', 409
             else:
                 # 가입되어 있지 않을 때
-                self.db.execute("INSERT INTO account(uuid, connected_sns) VALUES('", uuid, "', true)")
+                self.db.execute(query_formats.register_sns_account % (uuid))
                 return '', 201
 
         else:
@@ -40,8 +41,7 @@ class SignUp(Resource):
                 else:
                     # id 미중복 시
                     if len(password) >= 8:
-                        self.db.execute("INSERT INTO account(uuid, connected_sns, id, password) VALUES('",
-                                        uuid, "', ", connect_sns, ", '", id, "', '", password, "')")
+                        self.db.execute(query_formats.register_account % (uuid, id, password))
                         return '', 201
                     else:
                         # 비밀번호 길이가 8자리 미만
