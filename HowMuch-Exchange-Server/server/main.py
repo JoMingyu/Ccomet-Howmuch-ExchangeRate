@@ -1,5 +1,6 @@
 import account
 import option
+from push_thread import PushThread
 
 from flask import Flask
 from flask_restful import Api
@@ -23,4 +24,5 @@ def clear_tables():
 if __name__ == '__main__':
     print('서버 시작')
     print('--- resources ---')
+    PushThread().start()
     app.run('10.156.145.120')

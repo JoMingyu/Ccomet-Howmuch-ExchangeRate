@@ -1,16 +1,26 @@
 import threading
 import datetime
 import time
+from exchange_rate_parser import Parser
 
-class Push(threading.Thread):
+class PushThread(threading.Thread):
     def __init__(self):
+        threading.Thread.__init__(self)
+
         self.lastSend = self.current_time()
         self.term = 15
+        self.p = Parser()
 
     def run(self):
         if self.check_time():
             self.lastSend = self.current_time()
-            #실행할 코드들
+
+            for code in self.p.code_list:
+                currencyData = self.p.get_currency(code)
+                currencyList = self.p.process_data(currencyData)
+
+                for currencyInfo in currencyList:
+                    print(currencyInfo)
         else:
             time.sleep(self.term)
 
@@ -26,4 +36,3 @@ class Push(threading.Thread):
             return True
         else:
             return False
-
