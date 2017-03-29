@@ -1,6 +1,7 @@
 from flask_restful import Resource
 from flask import request
 from database import Database
+import query_formats
 
 class Option(Resource):
     db = Database()
@@ -11,6 +12,7 @@ class Option(Resource):
         uuid = request.form['uuid']
         src_nation = request.form['src_nation']
         dst_nation = request.form['dst_nation']
+        # options 테이블을 조작하기 위한 기본 데이터(PK)
 
         option_name = request.form['option_name']
         if option_name == 'percentage':
@@ -29,34 +31,35 @@ class Option(Resource):
 
             if self.row_exists(uuid, src_nation, dst_nation):
                 # 이미 uuid : src_nation-dst_nation에 대응되는 row가 있는 경우
-                query = "UPDATE options SET fall_percentage=%f, rise_percentage=%f, percentage_datum_point=%f WHERE uuid='%s' AND src_nation='%s' AND dst_nation='%s'"
-                self.db.execute(query % (fall_percentage, rise_percentage, percentage_datum_point, uuid, src_nation, dst_nation))
+                self.db.execute(query_formats.percentage_update_format % (fall_percentage, rise_percentage, percentage_datum_point, uuid, src_nation, dst_nation))
                 return '', 201
             else:
                 # row가 없는 경우
-                query = "INSERT INTO options(uuid, src_nation, dst_nation, fall_percentage, rise_percentage, percentage_datum_point) VALUES('%s', '%s', '%s', %f, %f, %f)"
-                self.db.execute(query % (uuid, src_nation, dst_nation, fall_percentage, rise_percentage, percentage_datum_point))
+                self.db.execute(query_formats.percentage_insert_format % (uuid, src_nation, dst_nation, fall_percentage, rise_percentage, percentage_datum_point))
                 return '', 201
 
         elif option_name == 'fixed_value':
             fixed_value_lower_limit = float(request.form['fixed_value_lower_limit'])
             # 하한선 아래로 내려갔을 때 푸쉬알림
+            # 미지정 시 0 요청
+            # [fixed_value_lower_limit] 아래로 환율이 떨어졌을 때 푸쉬
 
             fixed_value_upper_limit = float(request.form['fixed_value_upper_limit'])
             # 상한선 위로 올라갔을 때 푸쉬알림
+            # 미지정 시 0 요청
+            # [fixed_value_upper_limit] 위로 환율이 올랐을 때 푸쉬
 
             if self.row_exists(uuid, src_nation, dst_nation):
-                query = "UPDATE options SET fixed_value_lower_limit=%f, fixed_value_upper_limit=%f WHERE uuid='%s' AND src_nation='%s' AND dst_nation='%s'"
-                self.db.execute(query % (fixed_value_lower_limit, fixed_value_upper_limit, uuid, src_nation, dst_nation))
+                self.db.execute(query_formats.fixed_value_update_format % (fixed_value_lower_limit, fixed_value_upper_limit, uuid, src_nation, dst_nation))
                 return '', 201
             else:
-                query = "INSERT INTO options(uuid, src_nation, dst_nation, fixed_value_lower_limit, fixed_value_upper_limit) VALUES('%s', '%s', '%s', %f, %f)"
-                self.db.execute(query % (uuid, src_nation, dst_nation, fixed_value_lower_limit, fixed_value_upper_limit))
+                self.db.execute(query_formats.fixed_value_insert_format % (uuid, src_nation, dst_nation, fixed_value_lower_limit, fixed_value_upper_limit))
                 return '', 201
 
     @staticmethod
     def row_exists(uuid, src_nation, dst_nation):
-        rows = Database().execute("SELECT * FROM options WHERE uuid='", uuid, "' AND src_nation='", src_nation, "' AND dst_nation='", dst_nation, "'")
+        query = "SELECT * FROM options WHERE uuid='%s' AND src_nation='%s' AND dst_nation='%s'"
+        rows = Database().execute(query % (uuid, src_nation, dst_nation))
         if rows:
             return True
         else:
