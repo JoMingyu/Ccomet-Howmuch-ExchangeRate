@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/HowMuch-Exchange-Server/server" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/HowMuch-Exchange-Server/restful_modules" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/HowMuch-Exchange-Server/support" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/HowMuch-Exchange-Server/temp" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
