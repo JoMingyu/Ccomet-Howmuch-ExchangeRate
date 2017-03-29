@@ -12,6 +12,7 @@ class PushThread(threading.Thread):
         self.p = Parser()
 
     def run(self):
+        print('Push thread started')
         if self.check_time():
             self.lastSend = self.current_time()
 

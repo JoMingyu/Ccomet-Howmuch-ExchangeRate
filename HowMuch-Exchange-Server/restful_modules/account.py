@@ -19,7 +19,7 @@ class SignUp(Resource):
                 return '', 409
             else:
                 # 가입되어 있지 않을 때
-                self.db.execute(query_formats.register_sns_account % (uuid))
+                self.db.execute(query_formats.register_sns_account_format % uuid)
                 return '', 201
 
         else:
@@ -41,7 +41,7 @@ class SignUp(Resource):
                 else:
                     # id 미중복 시
                     if len(password) >= 8:
-                        self.db.execute(query_formats.register_account % (uuid, id, password))
+                        self.db.execute(query_formats.register_account_format % (uuid, id, password))
                         return '', 201
                     else:
                         # 비밀번호 길이가 8자리 미만
