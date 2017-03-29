@@ -1,7 +1,7 @@
 from flask_restful import Resource
-from flask import request, make_response
+from flask import request
 from database import Database
-from cryptography.fernet import Fernet
+import query_formats
 
 class SignUp(Resource):
     # 회원가입
@@ -19,7 +19,7 @@ class SignUp(Resource):
                 return '', 409
             else:
                 # 가입되어 있지 않을 때
-                self.db.execute("INSERT INTO account(uuid, connected_sns) VALUES('", uuid, "', true)")
+                self.db.execute(query_formats.register_sns_account % (uuid))
                 return '', 201
 
         else:
@@ -41,8 +41,7 @@ class SignUp(Resource):
                 else:
                     # id 미중복 시
                     if len(password) >= 8:
-                        self.db.execute("INSERT INTO account(uuid, connected_sns, id, password) VALUES('",
-                                        uuid, "', ", connect_sns, ", '", id, "', '", password, "')")
+                        self.db.execute(query_formats.register_account % (uuid, id, password))
                         return '', 201
                     else:
                         # 비밀번호 길이가 8자리 미만
@@ -51,4 +50,20 @@ class SignUp(Resource):
 
 class SignIn(Resource):
     # 로그인
-    pass
+    # SNS 미연결 시
+    db = Database()
+    def post(self):
+        id = request.form['id']
+        password = request.form['password']
+
+        rows = self.db.execute("SELECT * FROM account WHERE id='", id, "'")
+        if rows:
+            # id에 해당하는 계정 존재
+            if rows[0]['password'] == password:
+                # 로그인 성공
+                return '', 201
+            else:
+                return '', 404
+        else:
+            # 계정 미존재
+            return '', 404
