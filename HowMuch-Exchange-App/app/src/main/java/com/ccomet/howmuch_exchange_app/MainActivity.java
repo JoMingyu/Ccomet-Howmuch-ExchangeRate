@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
         //get Permissions
-
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
             int permissionResult = checkSelfPermission(Manifest.permission.READ_PHONE_STATE);
             if(permissionResult == PackageManager.PERMISSION_DENIED){
