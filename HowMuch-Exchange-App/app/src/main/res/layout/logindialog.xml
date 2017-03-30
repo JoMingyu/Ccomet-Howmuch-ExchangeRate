@@ -10,6 +10,7 @@
     android:id="@+id/logindialog_linear"
     tools:context="com.ccomet.howmuch_exchange_app.LoginActivity">
 
+    <!--Howmuch 앱 로고 Image -->
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,14 +24,84 @@
         android:textSize="15dp"
         android:textColor="#FFFFFF"/>
 
-    <com.ccomet.howmuch_exchange_app.LoginButton
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:gravity="center"
+        android:weightSum="9">
+
+        <Button
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:id="@+id/register_button"
+            android:background="#663366"
+            android:drawableLeft="@mipmap/ic_launcher"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:text="회원 가입"
+            android:textColor="#FFFFFF"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:gravity="center"
+        android:weightSum="9">
+
+        <Button
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:id="@+id/facebook_start_button"
+            android:background="#3B5998"
+            android:drawableLeft="@mipmap/ic_launcher"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="페이스북 계정으로 시작"
+            android:textAlignment="gravity"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:weightSum="9">
+
+        <Button
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:id="@+id/google_start_button"
+            android:background="#D34836"
+            android:drawableLeft="@mipmap/ic_launcher"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="Google+ 계정으로 시작"
+            android:textColor="#FFFFFF"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/register_button"
-        app:bg="@drawable/register"
-        app:symbol="@mipmap/ic_launcher"
-        app:text="회원 가입"
-        app:textColor="@color/White"/>
+        android:layout_marginTop="20dp"
+        android:id="@+id/no_login_button">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#FFFFFF"
+            android:text="로그인 없이 시작"/>
+
+    </LinearLayout>
 
 </LinearLayout>

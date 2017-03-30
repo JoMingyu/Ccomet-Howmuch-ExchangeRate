@@ -7,4 +7,5 @@
     <color name="White">#FFFFFF</color>
 
     <drawable name="register">#663366</drawable>
+    <drawable name="transparent">#FFFFFFFF</drawable>
 </resources>
