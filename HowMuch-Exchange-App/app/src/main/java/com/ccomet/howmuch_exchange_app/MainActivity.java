@@ -8,6 +8,7 @@ import android.os.Build;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         permissionText = (TextView)findViewById(R.id.permission_text);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
     }
 
     @Override

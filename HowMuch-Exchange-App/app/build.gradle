@@ -23,12 +23,11 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     //Dependency for Google Sign-in
-    
 
     //Dependencies for the REST API
-    
+
     //Dependency for Firebase
-    
+
     //Dependency for Facebook Sign in
     compile 'com.android.support:appcompat-v7:24.2.0'
     compile 'com.google.android.gms:play-services-auth:10.2.0'
@@ -40,6 +39,8 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
 }
+
+
 
 
 apply plugin: 'com.google.gms.google-services'

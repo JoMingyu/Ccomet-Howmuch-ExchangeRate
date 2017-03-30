@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="#333333"
+    android:background="#888888"
     tools:context="com.ccomet.howmuch_exchange_app.LoginActivity">
 
     <ImageView

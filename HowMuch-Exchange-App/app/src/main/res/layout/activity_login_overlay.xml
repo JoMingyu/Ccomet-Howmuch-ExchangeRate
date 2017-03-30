@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:facebook="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="#88333333"
-    android:id="@+id/logindialog_linear"
+    android:background="#88000000"
     tools:context="com.ccomet.howmuch_exchange_app.LoginActivity">
+
+    <!--android:id="@+id/logindialog_linear"-->
 
     <!--Howmuch 앱 로고 Image -->
     <ImageView
@@ -33,7 +35,7 @@
 
         <Button
             android:layout_width="200sp"
-            android:layout_height="wrap_content"
+            android:layout_height="50sp"
             android:layout_weight="7"
             android:id="@+id/register_button"
             android:background="#663366"
@@ -41,6 +43,7 @@
             android:textAlignment="gravity"
             android:gravity="center"
             android:text="회원 가입"
+            android:textSize="20sp"
             android:textColor="#FFFFFF"/>
 
     </LinearLayout>
@@ -49,21 +52,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20sp"
-        android:gravity="center"
-        android:weightSum="9">
+        android:gravity="center">
 
-        <Button
-            android:layout_width="200sp"
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:id="@+id/facebook_start_button"
-            android:background="#3B5998"
-            android:drawableLeft="@mipmap/ic_launcher"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:text="페이스북 계정으로 시작"
-            android:textAlignment="gravity"
-            android:textColor="#FFFFFF" />
+            <Button
+                android:layout_width="350sp"
+                android:layout_height="50sp"
+                android:id="@+id/facebook_start_button"
+                android:background="#3B5998"
+                android:drawableLeft="@mipmap/ic_launcher"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="페이스북 계정으로 시작"
+                android:textAlignment="gravity"
+                android:textSize="20sp"
+                android:textColor="#FFFFFF" />
 
     </LinearLayout>
 
@@ -76,7 +78,7 @@
 
         <Button
             android:layout_width="200sp"
-            android:layout_height="wrap_content"
+            android:layout_height="50sp"
             android:layout_weight="7"
             android:id="@+id/google_start_button"
             android:background="#D34836"
@@ -85,6 +87,7 @@
             android:gravity="center"
             android:layout_gravity="center"
             android:text="Google+ 계정으로 시작"
+            android:textSize="20sp"
             android:textColor="#FFFFFF"/>
 
     </LinearLayout>
@@ -100,8 +103,15 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textColor="#FFFFFF"
+            android:textSize="20sp"
             android:text="로그인 없이 시작"/>
 
     </LinearLayout>
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/facebook_login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
 
 </LinearLayout>
