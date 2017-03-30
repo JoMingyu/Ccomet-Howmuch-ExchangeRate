@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "111981686123",
+    "project_id": "howmuch-exchangerate"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111981686123:android:d8e410f6aecf37b9",
+        "android_client_info": {
+          "package_name": "com.ccomet.howmuch_exchange_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "111981686123-34geilm0e1h0n6d899ih1edcsh0qo7u3.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "111981686123-hh94q0jqd4p5p28483a48lklbov0akhs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ccomet.howmuch_exchange_app",
+            "certificate_hash": "51a62cbe569edc68d78962b31114fb9df30c2e51"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA30S6xopPdDJkIvXOrC_IRWbQW0OVTvO0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
