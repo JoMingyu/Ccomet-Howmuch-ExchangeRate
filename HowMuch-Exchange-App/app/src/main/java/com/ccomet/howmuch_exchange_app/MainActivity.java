@@ -8,6 +8,7 @@ import android.os.Build;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         permissionText = (TextView)findViewById(R.id.permission_text);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
     }
 
     @Override
@@ -28,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
         //get Permissions
-
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
             int permissionResult = checkSelfPermission(Manifest.permission.READ_PHONE_STATE);
             if(permissionResult == PackageManager.PERMISSION_DENIED){
