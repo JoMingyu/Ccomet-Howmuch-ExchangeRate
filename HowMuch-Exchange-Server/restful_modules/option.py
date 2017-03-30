@@ -56,6 +56,23 @@ class Option(Resource):
                 self.db.execute(query_formats.fixed_value_insert_format % (uuid, src_nation, dst_nation, fixed_value_lower_limit, fixed_value_upper_limit))
                 return '', 201
 
+        elif option_name == 'boolean_options':
+            every_change = request.form['every_change']
+            # 모든 변화에서 푸쉬알림
+
+            every_rise = request.form['every_rise']
+            # 모든 환율 상승에서 푸쉬알림
+
+            every_fall = request.form['every_fall']
+            # 모든 환율 하락에서 푸쉬알림
+
+            if self.row_exists(uuid, src_nation, dst_nation):
+                self.db.execute(query_formats.boolean_options_update_format % (every_change, every_rise, every_fall, uuid, src_nation, dst_nation))
+                return '', 201
+            else:
+                self.db.execute(query_formats.boolean_options_insert_format % (uuid, src_nation, dst_nation, every_change, every_rise, every_fall))
+                return '', 201
+
     @staticmethod
     def row_exists(uuid, src_nation, dst_nation):
         query = "SELECT * FROM options WHERE uuid='%s' AND src_nation='%s' AND dst_nation='%s'"
