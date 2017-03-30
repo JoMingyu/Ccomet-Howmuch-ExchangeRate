@@ -1,6 +1,6 @@
 import requests
 import json
-import pymysql
+from database import Database
 
 class Parser:
     _instance = None
@@ -19,11 +19,7 @@ class Parser:
         self.code_list = list
         self.APIUrl = "https://api.manana.kr/exchange/rate/"
 
-        #insert passwrod
-        self.conn = pymysql.connect(host='localhost',   user='',
-                                    password='',        db='parser',
-                                    charset='utf8')
-        self.curs = self.conn.cursor()
+        self.db = Database()
 
     def main(self):
         for country in self.code_list:
@@ -61,8 +57,7 @@ class Parser:
 
     def insert_data(self, currencyInfo):
         query = "INSERT INTO test (src, dct, rate) VALUES ('{0}', '{1}', '{2}')".format(currencyInfo[0], currencyInfo[1], currencyInfo[2])
-        self.curs.execute(query)
-        self.conn.commit()
+        self.db.execute(query)
 
 if __name__ == '__main__':
     p = Parser()
