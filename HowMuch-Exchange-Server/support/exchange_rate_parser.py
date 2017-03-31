@@ -21,24 +21,15 @@ class Parser:
 
         self.db = Database()
 
-    def main(self):
-        for country in self.code_list:
-
-            data = self.get_currency(country)
-            rate_list = self.process_data(data.decode("utf-8"))
-
-            for currencyInfo in rate_list:
-                self.insert_data(currencyInfo)
-
     def get_currency(self, src):
         response = requests.get(self.APIUrl + src + "/" + self.code_string + ".json")
         return response.content
 
     @staticmethod
-    def process_data(jsonData):
-        json_dict = json.loads(jsonData)
+    def process_data(json_data):
+        json_dict = json.loads(json_data)
 
-        tupleList = []
+        tuple_list = []
 
         for dictData in json_dict:
             string = dictData['name']
@@ -51,9 +42,9 @@ class Parser:
                 continue
 
             data = (src, dct, rate)
-            tupleList.append(data)
+            tuple_list.append(data)
 
-        return tupleList
+        return tuple_list
 
     def insert_data(self, currencyInfo):
         query = "INSERT INTO test (src, dct, rate) VALUES ('{0}', '{1}', '{2}')".format(currencyInfo[0], currencyInfo[1], currencyInfo[2])
