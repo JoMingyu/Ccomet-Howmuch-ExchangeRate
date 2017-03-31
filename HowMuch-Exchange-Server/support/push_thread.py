@@ -17,10 +17,14 @@ class PushThread(threading.Thread):
             self.lastSend = self.current_time()
 
             for code in self.p.code_list:
-                currency_data = self.p.get_currency(code)
+                currency_data = self.p.get_exchange_rate(code)
+                # type(currency_data) : <class 'bytes'>
+
                 currency_list = self.p.process_data(currency_data.decode("utf-8"))
+                # decode : bytes to str
 
                 for currencyInfo in currency_list:
+                    # self.p.insert_data(currency_info)
                     print(currencyInfo)
         else:
             time.sleep(self.term)
