@@ -18,8 +18,8 @@ class PushThread(threading.Thread):
 
             for country in self.p.code_list:
 
-                jsonData = self.p.get_currency(country)
-                rate_list = self.p.process_data(jsonData.decode("utf-8"))
+                json_data = self.p.get_currency(country)
+                rate_list = self.p.process_data(json_data)
 
                 for currencyInfo in rate_list:
                     self.p.insert_data(currencyInfo)
@@ -39,3 +39,4 @@ class PushThread(threading.Thread):
             return True
         else:
             return False
+

@@ -21,18 +21,16 @@ class Parser:
 
         #insert passwrod
         self.conn = pymysql.connect(host='localhost',   user='zhsir123',
-                                    password='dhk0654', db='parser',
+                                    password='dhk0654',        db='parser',
                                     charset='utf8')
         self.curs = self.conn.cursor()
 
     def get_currency(self, src):
         response = requests.get(self.APIUrl + src + "/" + self.code_string + ".json")
-        return response.content
+        return response.json()
 
     @staticmethod
-    def process_data(jsonData):
-        json_dict = json.loads(jsonData)
-
+    def process_data(json_dict):
         tupleList = []
 
         for dictData in json_dict:
