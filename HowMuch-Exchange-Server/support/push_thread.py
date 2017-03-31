@@ -17,14 +17,13 @@ class PushThread(threading.Thread):
         if self.check_time():
             self.last_send = self.current_time()
 
-            for country in self.p.code_list:
-
-                json_data = self.p.get_exchange_rate(country)
+            for country_code in self.p.code_list:
+                json_data = self.p.get_exchange_rate(country_code)
                 rate_list = self.p.process_data(json_data)
 
                 for exchange_rate in rate_list:
                     print(exchange_rate)
-                    self.p.insert_data(exchange_rate)
+                    self.p.commit_data(exchange_rate)
 
         else:
             time.sleep(self.term)

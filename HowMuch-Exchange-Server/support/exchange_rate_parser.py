@@ -57,7 +57,6 @@ class Parser:
 
         return tuple_list
 
-    def insert_data(self, currency_info):
-        print('asdfasdf')
+    def commit_data(self, currency_info):
         self.db.execute(query_formats.exchange_rate_delete)
         self.db.execute(query_formats.exchange_rate_insert_format % (currency_info[0], currency_info[1], currency_info[2]))
