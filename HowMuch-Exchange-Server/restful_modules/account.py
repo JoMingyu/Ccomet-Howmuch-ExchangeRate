@@ -68,4 +68,4 @@ class SignIn(Resource):
                 return '', 404
         else:
             # 계정 미존재
-            return '', 204
+            return '', 404

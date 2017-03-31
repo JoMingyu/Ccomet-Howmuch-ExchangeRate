@@ -3,7 +3,6 @@ import option
 import exchange_rate
 
 from push_thread import PushThread
-
 from flask import Flask
 from flask_restful import Api
 

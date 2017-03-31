@@ -1,6 +1,8 @@
 import requests
 import json
 from database import Database
+import query_formats
+
 
 class Parser:
     _instance = None
@@ -35,13 +37,9 @@ class Parser:
 
     def get_exchange_rate(self, src):
         response = requests.get(self.APIUrl + src + "/" + self.code_string + ".json")
-        return response.content
+        return response.json()
 
-    @staticmethod
-    def process_data(json_data):
-        # returns tuple
-        json_dict = json.loads(json_data)
-
+    def process_data(self, json_dict):
         tuple_list = []
 
         for dictData in json_dict:
@@ -59,6 +57,6 @@ class Parser:
 
         return tuple_list
 
-    def insert_data(self, currencyInfo):
-        query = "INSERT INTO test (src, dct, rate) VALUES ('{0}', '{1}', '{2}')".format(currencyInfo[0], currencyInfo[1], currencyInfo[2])
-        self.db.execute(query)
+    def insert_data(self, currency_info):
+        print('asdfasdf')
+        self.db.execute(query_formats.exchange_rate_insert_format % (currency_info[0], currency_info[1], currency_info[2]))
