@@ -9,14 +9,13 @@ class PushThread(threading.Thread):
         threading.Thread.__init__(self)
 
         self.last_send = self.current_time()
-        self.term = 15
+        self.term = 1
         self.p = Parser()
 
     def run(self):
-        print('Thread start')
+        print('Push thread start')
         if self.check_time():
             self.last_send = self.current_time()
-            print('in here')
 
             for country in self.p.code_list:
 
@@ -38,7 +37,7 @@ class PushThread(threading.Thread):
         current_time = self.current_time()
         time = self.last_send - current_time
 
-        if time.seconds >= 3600:
+        if time.seconds >= 300:
             return True
         else:
             return False

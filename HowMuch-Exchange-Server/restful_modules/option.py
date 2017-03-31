@@ -16,17 +16,15 @@ class Option(Resource):
         if self.row_exists(uuid, src_nation, dst_nation):
             rows = self.db.execute(query_formats.option_select_format % (uuid, src_nation, dst_nation))
 
-            data = [
-                {'fall_percentage': rows[0]['fall_percentage'],
-                 'rise_percentage': rows[0]['rise_percentage'],
-                 'percentage_criteria': rows[0]['percentage_criteria'],
-                 'fixed_value_lower_limit': rows[0]['fixed_value_lower_limit'],
-                 'fixed_value_upper_limit': rows[0]['fixed_value_upper_limit'],
-                 'every_change': rows[0]['every_change'],
-                 'every_rise': rows[0]['every_rise'],
-                 'every_fall': rows[0]['every_fall']
-                }
-            ]
+            data = {'fall_percentage': rows[0]['fall_percentage'],
+                    'rise_percentage': rows[0]['rise_percentage'],
+                    'percentage_criteria': rows[0]['percentage_criteria'],
+                    'fixed_value_lower_limit': rows[0]['fixed_value_lower_limit'],
+                    'fixed_value_upper_limit': rows[0]['fixed_value_upper_limit'],
+                    'every_change': rows[0]['every_change'],
+                    'every_rise': rows[0]['every_rise'],
+                    'every_fall': rows[0]['every_fall']
+                    }
 
             return json.dumps(data), 200
         else:

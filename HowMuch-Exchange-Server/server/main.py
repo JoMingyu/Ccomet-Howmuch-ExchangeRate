@@ -22,7 +22,7 @@ def clear_tables():
     Database().execute("delete from options")
     Database().execute("delete from registration_ids")
 
-clear_tables()
+# clear_tables()
 
 if __name__ == '__main__':
     print('서버 시작')
