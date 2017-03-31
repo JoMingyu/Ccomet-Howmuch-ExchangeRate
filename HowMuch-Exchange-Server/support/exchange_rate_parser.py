@@ -20,16 +20,16 @@ class Parser:
         self.APIUrl = "https://api.manana.kr/exchange/rate/"
 
         #insert passwrod
-        self.conn = pymysql.connect(host='localhost',   user='',
-                                    password='',        db='parser',
+        self.conn = pymysql.connect(host='localhost',   user='zhsir123',
+                                    password='dhk0654', db='parser',
                                     charset='utf8')
         self.curs = self.conn.cursor()
 
     def main(self):
         for country in self.code_list:
 
-            data = self.get_currency(country)
-            rate_list = self.process_data(data.decode("utf-8"))
+            jsonData = self.get_currency(country)
+            rate_list = self.process_data(jsonData.decode("utf-8"))
 
             for currencyInfo in rate_list:
                 self.insert_data(currencyInfo)
@@ -63,7 +63,3 @@ class Parser:
         query = "INSERT INTO test (src, dct, rate) VALUES ('{0}', '{1}', '{2}')".format(currencyInfo[0], currencyInfo[1], currencyInfo[2])
         self.curs.execute(query)
         self.conn.commit()
-
-if __name__ == '__main__':
-    p = Parser()
-    p.main()

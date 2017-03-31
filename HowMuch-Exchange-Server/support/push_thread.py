@@ -16,12 +16,14 @@ class PushThread(threading.Thread):
         if self.check_time():
             self.lastSend = self.current_time()
 
-            for code in self.p.code_list:
-                currencyData = self.p.get_currency(code)
-                currencyList = self.p.process_data(currencyData)
+            for country in self.p.code_list:
 
-                for currencyInfo in currencyList:
-                    print(currencyInfo)
+                jsonData = self.p.get_currency(country)
+                rate_list = self.p.process_data(jsonData.decode("utf-8"))
+
+                for currencyInfo in rate_list:
+                    self.p.insert_data(currencyInfo)
+
         else:
             time.sleep(self.term)
 

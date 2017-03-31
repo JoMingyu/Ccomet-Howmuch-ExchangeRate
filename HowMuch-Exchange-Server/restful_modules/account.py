@@ -2,6 +2,7 @@ from flask_restful import Resource
 from flask import request
 from database import Database
 import query_formats
+import sys
 
 class SignUp(Resource):
     # 회원가입
@@ -67,3 +68,5 @@ class SignIn(Resource):
         else:
             # 계정 미존재
             return '', 404
+
+print(sys.path)
