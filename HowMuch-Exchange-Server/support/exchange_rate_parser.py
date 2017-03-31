@@ -52,6 +52,4 @@ class Parser:
 
     def insert_data(self, currencyInfo):
         query = "INSERT INTO test (src, dct, rate) VALUES ('{0}', '{1}', '{2}')".format(currencyInfo[0], currencyInfo[1], currencyInfo[2])
-        self.curs.execute(query)
-        self.conn.commit()
         self.db.execute(query)
