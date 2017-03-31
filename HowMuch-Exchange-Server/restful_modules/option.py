@@ -1,14 +1,37 @@
 from flask_restful import Resource
-from flask import request
+from flask import request, json
 from database import Database
 import query_formats
+
 
 class Option(Resource):
     db = Database()
 
+    def get(self):
+        # 옵션 조회
+        uuid = request.args.get('uuid')
+        src_nation = request.args.get('src_nation')
+        dst_nation = request.args.get('dst_nation')
+
+        if self.row_exists(uuid, src_nation, dst_nation):
+            rows = self.db.execute(query_formats.option_select_format % (uuid, src_nation, dst_nation))
+
+            data = {'fall_percentage': rows[0]['fall_percentage'],
+                    'rise_percentage': rows[0]['rise_percentage'],
+                    'percentage_criteria': rows[0]['percentage_criteria'],
+                    'fixed_value_lower_limit': rows[0]['fixed_value_lower_limit'],
+                    'fixed_value_upper_limit': rows[0]['fixed_value_upper_limit'],
+                    'every_change': rows[0]['every_change'],
+                    'every_rise': rows[0]['every_rise'],
+                    'every_fall': rows[0]['every_fall']
+                    }
+
+            return json.dumps(data), 200
+        else:
+            return '', 204
+
     def post(self):
         # 옵션 등록
-
         uuid = request.form['uuid']
         src_nation = request.form['src_nation']
         dst_nation = request.form['dst_nation']
@@ -26,16 +49,16 @@ class Option(Resource):
             # 미지정 시 0 요청
             # 기준점보다 [rise_percentage]% 올라갔을 때 푸쉬
 
-            percentage_datum_point = float(request.form['percentage_datum_point'])
+            percentage_criteria = float(request.form['percentage_criteria'])
             # 기준점(고정값/현재까지 평균/이번주 평균/현재까지 최고가/현재까지 최저가)
 
             if self.row_exists(uuid, src_nation, dst_nation):
                 # 이미 uuid : src_nation-dst_nation에 대응되는 row가 있는 경우
-                self.db.execute(query_formats.percentage_update_format % (fall_percentage, rise_percentage, percentage_datum_point, uuid, src_nation, dst_nation))
+                self.db.execute(query_formats.percentage_update_format % (fall_percentage, rise_percentage, percentage_criteria, uuid, src_nation, dst_nation))
                 return '', 201
             else:
                 # row가 없는 경우
-                self.db.execute(query_formats.percentage_insert_format % (uuid, src_nation, dst_nation, fall_percentage, rise_percentage, percentage_datum_point))
+                self.db.execute(query_formats.percentage_insert_format % (uuid, src_nation, dst_nation, fall_percentage, rise_percentage, percentage_criteria))
                 return '', 201
 
         elif option_name == 'fixed_value':

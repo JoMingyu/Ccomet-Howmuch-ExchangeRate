@@ -1,5 +1,6 @@
 import account
 import option
+import exchange_rate
 
 from push_thread import PushThread
 from flask import Flask
@@ -13,13 +14,15 @@ api = Api(app)
 api.add_resource(account.SignUp, '/signup')
 api.add_resource(account.SignIn, '/signin')
 api.add_resource(option.Option, '/option')
+api.add_resource(exchange_rate.ExchangeRate, '/exchange_rate')
+
 
 def clear_tables():
     Database().execute("delete from account")
     Database().execute("delete from options")
     Database().execute("delete from registration_ids")
 
-clear_tables()
+# clear_tables()
 
 if __name__ == '__main__':
     print('서버 시작')

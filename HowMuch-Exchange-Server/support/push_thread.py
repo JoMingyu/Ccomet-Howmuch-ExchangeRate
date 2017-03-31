@@ -3,26 +3,27 @@ import datetime
 import time
 from exchange_rate_parser import Parser
 
+
 class PushThread(threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)
 
-        self.lastSend = self.current_time()
-        self.term = 15
+        self.last_send = self.current_time()
+        self.term = 1
         self.p = Parser()
 
     def run(self):
-        print('Push thread started')
+        print('Push thread start')
         if self.check_time():
-            self.lastSend = self.current_time()
+            self.last_send = self.current_time()
 
-            for country in self.p.code_list:
-
-                json_data = self.p.get_currency(country)
+            for country_code in self.p.code_list:
+                json_data = self.p.get_exchange_rate(country_code)
                 rate_list = self.p.process_data(json_data)
 
-                for currencyInfo in rate_list:
-                    self.p.insert_data(currencyInfo)
+                for exchange_rate in rate_list:
+                    print(exchange_rate)
+                    self.p.commit_data(exchange_rate)
 
         else:
             time.sleep(self.term)
@@ -32,11 +33,10 @@ class PushThread(threading.Thread):
         return datetime.datetime.now()
 
     def check_time(self):
-        currentTime = self.current_time()
-        time = self.lastSend - currentTime
+        current_time = self.current_time()
+        time = self.last_send - current_time
 
-        if time.seconds >= 3600:
+        if time.seconds >= 300:
             return True
         else:
             return False
-
