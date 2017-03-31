@@ -28,13 +28,11 @@
           <file leaf-file-name="exchange_rate_parser.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/support/exchange_rate_parser.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="169">
-                  <caret line="29" column="24" lean-forward="false" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+                <state relative-caret-position="765">
+                  <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#15#0" expanded="true" />
-                    <marker date="1490948154654" expanded="true" signature="1349:1460" ph="..." />
-                    <marker date="1490948154654" expanded="true" signature="1518:1872" ph="..." />
-                    <marker date="1490948154654" expanded="true" signature="1932:1994" ph="INSERT INTO test... " />
+                    <marker date="1490952300951" expanded="true" signature="1976:2038" ph="INSERT INTO test... " />
                   </folding>
                 </state>
               </provider>
@@ -57,7 +55,7 @@
           <file leaf-file-name="database.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/database.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="714">
+                <state relative-caret-position="424">
                   <caret line="43" column="42" lean-forward="false" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
                   <folding />
                 </state>
@@ -74,11 +72,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="push_thread.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="push_thread.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/support/push_thread.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="357">
-                  <caret line="21" column="54" lean-forward="false" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
+                <state relative-caret-position="254">
+                  <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#16#0" expanded="true" />
                   </folding>
@@ -86,7 +84,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="query_formats.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="query_formats.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/support/query_formats.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="170">
@@ -128,7 +126,7 @@
           <file leaf-file-name="option.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/restful_modules/option.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="102">
+                <state relative-caret-position="-612">
                   <caret line="9" column="15" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
                   <folding>
                     <element signature="e#0#34#0" expanded="true" />
@@ -141,11 +139,11 @@
           <file leaf-file-name="exchange_rate_parser.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/support/exchange_rate_parser.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="424">
-                  <caret line="35" column="30" lean-forward="false" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+                <state relative-caret-position="138">
+                  <caret line="35" column="15" lean-forward="false" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
                   <folding>
                     <element signature="e#0#15#0" expanded="true" />
-                    <marker date="1490948154654" expanded="true" signature="1932:1994" ph="INSERT INTO test... " />
+                    <marker date="1490952300951" expanded="true" signature="1976:2038" ph="INSERT INTO test... " />
                   </folding>
                 </state>
               </provider>
@@ -194,9 +192,9 @@
         <option value="$PROJECT_DIR$/../../coding.py" />
         <option value="$PROJECT_DIR$/restful_modules/account.py" />
         <option value="$PROJECT_DIR$/server/main.py" />
+        <option value="$PROJECT_DIR$/support/stastic_data.py" />
         <option value="$PROJECT_DIR$/support/push_thread.py" />
         <option value="$PROJECT_DIR$/support/exchange_rate_parser.py" />
-        <option value="$PROJECT_DIR$/support/stastic_data.py" />
       </list>
     </option>
   </component>
@@ -896,7 +894,7 @@
           <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <marker date="1490948154654" expanded="true" signature="1932:1994" ph="INSERT INTO test... " />
+            <marker date="1490952300951" expanded="true" signature="1976:2038" ph="INSERT INTO test... " />
           </folding>
         </state>
       </provider>
@@ -1133,6 +1131,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <marker date="1490945805684" expanded="true" signature="365:384" ph="delete from " />
+            <marker date="1490945805684" expanded="true" signature="411:430" ph="delete from " />
+            <marker date="1490945805684" expanded="true" signature="457:485" ph="delete from " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/support/exchange_rate_parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="35" column="15" lean-forward="false" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <marker date="1490952300951" expanded="true" signature="1976:2038" ph="INSERT INTO test... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="43" column="42" lean-forward="false" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/fcm_sender.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/support/push_thread.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/support/query_formats.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1150,62 +1197,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/fcm_sender.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/restful_modules/option.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
+        <state relative-caret-position="-612">
           <caret line="9" column="15" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
             <marker date="1490794396719" expanded="true" signature="3217:3294" ph="SELECT * FRO... options" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="43" column="42" lean-forward="false" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <marker date="1490945805684" expanded="true" signature="365:384" ph="delete from " />
-            <marker date="1490945805684" expanded="true" signature="411:430" ph="delete from " />
-            <marker date="1490945805684" expanded="true" signature="457:485" ph="delete from " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/support/push_thread.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="54" lean-forward="false" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/support/exchange_rate_parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="35" column="30" lean-forward="false" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <marker date="1490948154654" expanded="true" signature="1932:1994" ph="INSERT INTO test... " />
           </folding>
         </state>
       </provider>
