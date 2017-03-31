@@ -25,15 +25,6 @@ class Parser:
                                     charset='utf8')
         self.curs = self.conn.cursor()
 
-    def main(self):
-        for country in self.code_list:
-
-            jsonData = self.get_currency(country)
-            rate_list = self.process_data(jsonData.decode("utf-8"))
-
-            for currencyInfo in rate_list:
-                self.insert_data(currencyInfo)
-
     def get_currency(self, src):
         response = requests.get(self.APIUrl + src + "/" + self.code_string + ".json")
         return response.content
