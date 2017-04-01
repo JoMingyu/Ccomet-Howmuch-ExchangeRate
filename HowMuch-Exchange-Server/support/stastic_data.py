@@ -1,6 +1,7 @@
 import database
 import calendar
 from time import strftime, localtime
+from pandas import DataFrame
 
 
 class ExploitRate:
@@ -30,13 +31,12 @@ class ExploitRate:
         if month < 10:
             month = "0" + str(month)
         if day < 10:
-            month = "0" + str(day)
+            day = "0" + str(day)
         else:
             day = str(day)
 
-        #
-        from_date = to_date.replace(to_date[5:7], month)
-        from_date = from_date.replace(to_date[8:10], day)
+        from_date = to_date[:5] + month + to_date[7:]
+        from_date = from_date[:8] + day + from_date[10:]
 
         #src,dct가 같은 것중 에서 between(from_date ~ to_date)에 대한 정보를 가져옴
         query = "SELECT * FROM test WHERE src='{0}' and dct='{1}' BETWEEN '{2}' and '{3}';"\
@@ -62,6 +62,6 @@ class ExploitRate:
 if __name__ == '__main__':
     a = ExploitRate("KRW", "USD")
 
-    temp = a.getBySection(40)
-
-    print(a.exchange_average(temp))
+    temp = a.getBySection(30)
+    data = DataFrame(data= temp, columns=['src', 'dct', 'uploadDate', 'rate'])
+    print(data)
