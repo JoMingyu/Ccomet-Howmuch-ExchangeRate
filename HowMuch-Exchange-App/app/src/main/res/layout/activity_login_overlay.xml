@@ -52,11 +52,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20sp"
-        android:gravity="center">
+        android:gravity="center"
+        android:weightSum="9">
 
             <Button
-                android:layout_width="350sp"
+                android:layout_width="200sp"
                 android:layout_height="50sp"
+                android:layout_weight="7"
                 android:id="@+id/facebook_start_button"
                 android:background="#3B5998"
                 android:drawableLeft="@mipmap/ic_launcher"
@@ -76,6 +78,7 @@
         android:gravity="center"
         android:weightSum="9">
 
+        <!--
         <Button
             android:layout_width="200sp"
             android:layout_height="50sp"
@@ -89,6 +92,14 @@
             android:text="Google+ 계정으로 시작"
             android:textSize="20sp"
             android:textColor="#FFFFFF"/>
+            -->
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/google_login_button"
+            android:layout_width="200sp"
+            android:layout_height="50sp"
+            android:layout_weight="7"
+            android:visibility="visible"/>
 
     </LinearLayout>
 

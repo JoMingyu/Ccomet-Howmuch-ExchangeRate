@@ -33,7 +33,7 @@ public class LoginOverlayActivity extends Activity {
 
     Button registerButton;
     Button facebookStartButton;
-    Button googleStartButton;
+    com.google.android.gms.common.SignInButton googleStartButton;
     LinearLayout noLoginButton;
 
     com.facebook.login.widget.LoginButton loginButton;
@@ -55,7 +55,7 @@ public class LoginOverlayActivity extends Activity {
 
         registerButton = (Button)findViewById(R.id.register_button);
         facebookStartButton = (Button)findViewById(R.id.facebook_start_button);
-        googleStartButton = (Button)findViewById(R.id.google_start_button);
+        googleStartButton = (com.google.android.gms.common.SignInButton)findViewById(R.id.google_login_button);
         noLoginButton = (LinearLayout)findViewById(R.id.no_login_button);
 
         registerButton.setOnClickListener(onClickListener);
@@ -95,49 +95,6 @@ public class LoginOverlayActivity extends Activity {
                 System.out.println("onError");
             }
         });
-
-        /*
-        List<String> permissionNeeds = Arrays.asList("public_profile", "email", "AccessToken");
-        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-                System.out.println("onSuccess");
-                String accessToken = loginResult.getAccessToken().getToken();
-                Log.d("Access Token", accessToken);
-
-                GraphRequest request = GraphRequest.newMeRequest(
-                        loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
-                            @Override
-                            public void onCompleted(JSONObject object, GraphResponse response) {
-                                Log.d("Login Activity", response.toString());
-                                try {
-                                    name = object.getString("name");
-                                    email = object.getString("email");
-                                    gender = object.getString("gender");
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        }
-                );
-
-                Bundle parameters = new Bundle();
-                parameters.putString("fields", "id,name,email,gender,birthday");
-                request.setParameters(parameters);
-                request.executeAsync();
-            }
-
-            @Override
-            public void onCancel() {
-                System.out.println("onCancel");
-            }
-
-            @Override
-            public void onError(FacebookException error) {
-                System.out.println("onError");
-            }
-        });
-        */
     }
 
     View.OnClickListener onClickListener = new View.OnClickListener(){
@@ -151,8 +108,10 @@ public class LoginOverlayActivity extends Activity {
                     Toast.makeText(LoginOverlayActivity.this, "facebook start Button Clicked", Toast.LENGTH_SHORT).show();
                     loginButton.performClick();
                     break;
-                case R.id.google_start_button:
+                case R.id.google_login_button:
                     Toast.makeText(LoginOverlayActivity.this, "google+ start Button Clicked", Toast.LENGTH_SHORT).show();
+                    Intent toGoogleLoginIntent = new Intent(LoginOverlayActivity.this, GoogleLoginActivity.class);
+                    startActivity(toGoogleLoginIntent);
                     break;
                 case R.id.no_login_button:
                     Toast.makeText(LoginOverlayActivity.this, "Start with no sign in Button Clicked", Toast.LENGTH_SHORT).show();
