@@ -26,7 +26,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".FacebookLoginActivity" />
-        <activity android:name=".LoginOverlayActivity" android:theme="@style/Theme.Transparent"></activity>
+        <activity
+            android:name=".LoginOverlayActivity"
+            android:theme="@style/Theme.Transparent" />
+        <activity android:name=".GoogleLoginActivity"></activity>
     </application>
 
 </manifest>
