@@ -1,5 +1,4 @@
 import threading
-import datetime
 import time
 from exchange_rate_parser import Parser
 
@@ -23,3 +22,7 @@ class PushThread(threading.Thread):
                 self.p.commit_data(exchange_rate)
 
         time.sleep(self.term * 60)
+
+if __name__ == '__main__':
+    p = PushThread()
+    p.start()

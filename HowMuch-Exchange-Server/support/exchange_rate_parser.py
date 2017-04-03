@@ -1,7 +1,7 @@
 import requests
 
-import query_formats
-from database import Database
+from database import query_formats
+from database.database import Database
 
 
 class Parser:
@@ -48,6 +48,7 @@ class Parser:
             src = string[3:6]
 
             rate = round(dictData['rate'], 3)
+            print(rate)
 
             if src == dct or src == '=X':
                 continue
@@ -58,5 +59,9 @@ class Parser:
         return tuple_list
 
     def commit_data(self, currency_info):
-        self.db.execute(query_formats.exchange_rate_delete % currency_info[0], currency_info[1])
+        try:
+            self.db.execute(query_formats.exchange_rate_delete % currency_info[0], currency_info[1])
+        except TypeError as e:
+            pass
+
         self.db.execute(query_formats.exchange_rate_insert_format % (currency_info[0], currency_info[1], currency_info[2]))
