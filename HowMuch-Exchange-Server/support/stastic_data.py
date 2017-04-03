@@ -3,16 +3,16 @@ from time import strftime, localtime
 
 from pandas import DataFrame
 
-from database import database
+from database import Database
 
 
 class ExploitRate:
     def __init__(self, src, dct):
         self.src = src
         self.dct = dct
-        self.db = database.Database()
+        self.db = Database()
 
-    def getBySection(self, section):
+    def get_by_section(self, section):
         to_date = strftime("%Y-%m-%d %I:%M", localtime())
 
         #쿼리를 날릴 때 범위를 정하기 위해 월, 달, 일을 나눔
@@ -64,6 +64,6 @@ class ExploitRate:
 if __name__ == '__main__':
     a = ExploitRate("KRW", "USD")
 
-    temp = a.getBySection(30)
-    data = DataFrame(data= temp, columns=['src', 'dct', 'uploadDate', 'rate'])
+    temp = a.get_by_section(30)
+    data = DataFrame(data=temp, columns=['src', 'dct', 'uploadDate', 'rate'])
     print(data)
