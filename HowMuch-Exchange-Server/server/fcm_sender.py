@@ -1,6 +1,6 @@
 from pyfcm import FCMNotification
 
-from database.database import Database
+from database import Database
 
 
 class FCMSender:

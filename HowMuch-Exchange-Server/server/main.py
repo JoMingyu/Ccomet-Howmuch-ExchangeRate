@@ -4,7 +4,7 @@ from flask_restful import Api
 import account
 import exchange_rate
 import option
-from database.database import Database
+from database import Database
 from push_thread import PushThread
 
 app = Flask(__name__)
