@@ -74,7 +74,10 @@ public class GoogleLoginActivity extends FragmentActivity implements GoogleApiCl
     @Override
     public void onResume(){
         super.onResume();
-        signIn();
+        OptionalPendingResult<GoogleSignInResult> opr = Auth.GoogleSignInApi.silentSignIn(mGoogleApiClient);
+        //가져온 로그인 정보가 유효할 경우, OptionalPendingResult는 Done 상태가 됨
+        if( !opr.isDone() )
+            signIn();
     }
 
     @Override
@@ -93,6 +96,8 @@ public class GoogleLoginActivity extends FragmentActivity implements GoogleApiCl
         if(result.isSuccess()){
             GoogleSignInAccount account = result.getSignInAccount();
             Log.d(TAG, "Signed in as : "+account.getDisplayName());
+            Intent intent = new Intent(GoogleLoginActivity.this, LoginCheck.class);
+            startActivity(intent);
         }
     }
 

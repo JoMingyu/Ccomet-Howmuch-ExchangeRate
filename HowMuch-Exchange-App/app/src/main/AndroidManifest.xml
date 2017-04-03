@@ -29,7 +29,9 @@
         <activity
             android:name=".LoginOverlayActivity"
             android:theme="@style/Theme.Transparent" />
-        <activity android:name=".GoogleLoginActivity"></activity>
+        <activity android:name=".GoogleLoginActivity" />
+        <activity android:name=".LoginCheck"
+            android:theme="@style/Theme.Transparent" ></activity>
     </application>
 
 </manifest>

@@ -12,7 +12,7 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Intent intent = new Intent(LoginActivity.this, LoginOverlayActivity.class);
+        Intent intent = new Intent(LoginActivity.this, LoginCheck.class);
         startActivity(intent);
     }
 }
