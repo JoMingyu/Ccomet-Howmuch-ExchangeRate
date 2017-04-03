@@ -1,4 +1,4 @@
-from flask import request, json
+from flask import request, jsonify
 from flask_restful import Resource
 
 import query_formats
@@ -27,7 +27,7 @@ class Option(Resource):
                     'every_fall': rows[0]['every_fall']
                     }
 
-            return json.dumps(data), 200
+            return jsonify(result=data), 200
         else:
             return '', 204
 
