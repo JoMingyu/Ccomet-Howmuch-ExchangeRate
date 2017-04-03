@@ -8,7 +8,7 @@ class Database:
     host = 'localhost'
     user = 'zhsir123'
     password = 'dhk0654'
-    db = 'parser'
+    db = 'howmuch_exchange'
     charset = 'utf8'
 
     _instance = None
