@@ -6,8 +6,9 @@
       <sourceFolder url="file://$MODULE_DIR$/restful_modules" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/support" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/temp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/database" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.5.3 (C:\Users\dsm2016\AppData\Local\Programs\Python\Python35-32\python.exe)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.5.2 (C:\Users\jmg\AppData\Local\Programs\Python\Python35\python.exe)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Study" />
   </component>
