@@ -6,10 +6,9 @@ from pymysql import IntegrityError
 # db.execute("SELECT FROM table_name WHERE column='", column_name, "')")
 class Database:
     host = 'localhost'
-    port = 3306
-    user = 'root'
-    password = ''
-    db = 'howmuch_exchange'
+    user = 'zhsir123'
+    password = 'dhk0654'
+    db = 'parser'
     charset = 'utf8'
 
     _instance = None
@@ -22,7 +21,6 @@ class Database:
 
     def __init__(self):
         self.connection = pymysql.connect(host=self.host,
-                                          port=self.port,
                                           user=self.user,
                                           password=self.password,
                                           db=self.db,

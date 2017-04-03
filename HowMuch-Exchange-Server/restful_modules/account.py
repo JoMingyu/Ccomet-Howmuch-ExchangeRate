@@ -1,7 +1,9 @@
-from flask_restful import Resource
 from flask import request
-from database import Database
+from flask_restful import Resource
+
 import query_formats
+from database import Database
+
 
 class SignUp(Resource):
     # 회원가입
@@ -31,13 +33,13 @@ class SignUp(Resource):
             rows = self.db.execute("SELECT * FROM account WHERE uuid='", uuid, "'")
             if rows:
                 # uuid 중복 시
-                return '', 409
+                return 'conflict uuid', 409
             else:
                 # uuid 미중복 시
                 rows = self.db.execute("SELECT * FROM account WHERE id='", id, "'")
                 if rows:
                     # id 중복 시
-                    return '', 409
+                    return 'conflict id', 409
                 else:
                     # id 미중복 시
                     if len(password) >= 8:
@@ -52,6 +54,7 @@ class SignIn(Resource):
     # 로그인
     # SNS 미연결 시
     db = Database()
+
     def post(self):
         id = request.form['id']
         password = request.form['password']
