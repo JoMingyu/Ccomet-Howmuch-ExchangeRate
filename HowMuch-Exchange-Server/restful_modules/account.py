@@ -11,17 +11,21 @@ class SignUp(Resource):
 
     def post(self):
         connect_sns = request.form['connect_sns']
+        client_token = request.form['token']
+
         if connect_sns == 'True' or connect_sns == 'true':
             # sns 연결 시
             uuid = request.form['uuid']
+            google_id = request.form['google_id']
 
             rows = self.db.execute("SELECT * FROM account WHERE uuid='", uuid, "'")
             if rows:
-                # uuid 중복 시
+                # 디바이스에 이미 계정이 생성되어 있을 경우
                 return '', 409
             else:
                 # 가입되어 있지 않을 때
-                self.db.execute(query_formats.register_sns_account_format % uuid)
+                self.db.execute(query_formats.register_sns_account_format % (uuid, google_id))
+                self.db.execute(query_formats.register_client_token_format % (google_id, client_token))
                 return '', 201
 
         else:
@@ -32,7 +36,7 @@ class SignUp(Resource):
 
             rows = self.db.execute("SELECT * FROM account WHERE uuid='", uuid, "'")
             if rows:
-                # uuid 중복 시
+                # 디바이스에 이미 계정이 생성되어 있을 경우
                 return 'conflict uuid', 409
             else:
                 # uuid 미중복 시
