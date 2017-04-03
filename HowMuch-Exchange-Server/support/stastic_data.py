@@ -1,7 +1,9 @@
-import database
 import calendar
 from time import strftime, localtime
+
 from pandas import DataFrame
+
+from database import database
 
 
 class ExploitRate:

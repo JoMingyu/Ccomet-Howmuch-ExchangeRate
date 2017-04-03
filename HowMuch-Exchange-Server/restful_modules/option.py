@@ -1,7 +1,8 @@
-from flask_restful import Resource
 from flask import request, json
-from database import Database
-import query_formats
+from flask_restful import Resource
+
+from database import query_formats
+from database.database import Database
 
 
 class Option(Resource):

@@ -88,9 +88,6 @@ ENV/
 # Rope project settings
 .ropeproject
 
-# IDE resource
-.idea/
-
 # Built application files
 *.apk
 *.ap_

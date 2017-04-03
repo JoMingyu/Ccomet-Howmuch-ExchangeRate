@@ -1,12 +1,11 @@
-import account
-import option
-import exchange_rate
-
-from push_thread import PushThread
 from flask import Flask
 from flask_restful import Api
 
-from database import Database
+import account
+import exchange_rate
+import option
+from database.database import Database
+from push_thread import PushThread
 
 app = Flask(__name__)
 api = Api(app)
