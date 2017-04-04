@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # 계정
 register_account_format = "INSERT INTO account(uuid, connected_sns, id, password) VALUES('%s', false, '%s', '%s')"
 register_sns_account_format = "INSERT INTO account(uuid, connected_sns, google_id) VALUES ('%s', true, '%s')"
@@ -19,3 +21,6 @@ option_select_format = "SELECT * FROM options WHERE id='%s' AND src_nation='%s' 
 exchange_rate_delete = "DELETE FROM current_exchange_rates WHERE src_nation='%s' AND dst_nation='%s'"
 exchange_rate_insert_format = "INSERT INTO current_exchange_rates(src_nation, dst_nation, exchange_rate) VALUES('%s', '%s', %f)"
 exchange_rate_select_format = "SELECT exchange_rate FROM current_exchange_rates WHERE src_nation='%s' AND dst_nation='%s'"
+
+# 하루 단위 환율
+daily_exchange_rate_insert_format = "INSERT INTO daily_exchange_rate("

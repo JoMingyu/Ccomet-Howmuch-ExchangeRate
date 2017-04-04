@@ -1,7 +1,9 @@
+# -*- coding: utf-8 -*-
+
 import requests
 
-import query_formats
-from database import Database
+from database import query_formats
+from database import database
 
 
 class Parser:
@@ -33,7 +35,7 @@ class Parser:
         self.code_list = country_list_major
         self.APIUrl = "https://api.manana.kr/exchange/rate/"
 
-        self.db = Database()
+        self.db = database.Database()
 
     def get_exchange_rate(self, src):
         response = requests.get(self.APIUrl + src + "/" + self.code_string + ".json")

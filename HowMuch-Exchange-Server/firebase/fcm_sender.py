@@ -1,5 +1,7 @@
+# -*- coding: utf-8 -*-
+
 from pyfcm import FCMNotification
-from database import Database
+from database import database
 
 
 class FCMSender:
@@ -13,7 +15,7 @@ class FCMSender:
 
     def __init__(self, server_key):
         self.push_service = FCMNotification(api_key=server_key)
-        self.db = Database()
+        self.db = database.Database()
 
     def send(self):
         clients_to_push = self.get_clients_to_push(self)

@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import calendar
 from time import strftime, localtime
 

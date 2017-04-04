@@ -1,13 +1,15 @@
+# -*- coding: utf-8 -*-
+
 from flask import request
 from flask_restful import Resource
 
-import query_formats
-from database import Database
+from database import query_formats
+from database import database
 
 
 class SignUp(Resource):
     # 회원가입
-    db = Database()
+    db = database.Database()
 
     def post(self):
         connect_sns = request.form['connect_sns']

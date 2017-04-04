@@ -1,12 +1,14 @@
+# -*- coding: utf-8 -*-
+
 from flask import request, jsonify
 from flask_restful import Resource
 
-import query_formats
-from database import Database
+from database import query_formats
+from database import database
 
 
 class ExchangeRate(Resource):
-    db = Database()
+    db = database.Database()
 
     def get(self):
         # 환율 조회

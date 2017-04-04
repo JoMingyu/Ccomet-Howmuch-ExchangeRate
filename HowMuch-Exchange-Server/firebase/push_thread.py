@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
+
 import threading
 import time
-from exchange_rate_parser import Parser
+from support import exchange_rate_parser
 
 
 class PushThread(threading.Thread):
@@ -8,7 +10,7 @@ class PushThread(threading.Thread):
         threading.Thread.__init__(self)
 
         self.term = 5
-        self.p = Parser()
+        self.p = exchange_rate_parser.Parser()
 
     def run(self):
         print('Push thread start')
