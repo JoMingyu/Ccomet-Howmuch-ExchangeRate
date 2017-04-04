@@ -1,7 +1,7 @@
 import requests
 
-from database import query_formats
-from database.database import Database
+import query_formats
+from database import Database
 
 
 class Parser:
