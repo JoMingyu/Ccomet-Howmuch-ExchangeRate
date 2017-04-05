@@ -30,8 +30,14 @@
             android:name=".LoginOverlayActivity"
             android:theme="@style/Theme.Transparent" />
         <activity android:name=".GoogleLoginActivity" />
-        <activity android:name=".LoginCheck"
-            android:theme="@style/Theme.Transparent" ></activity>
+        <activity
+            android:name=".LoginCheck"
+            android:theme="@style/Theme.Transparent" />
+        <activity android:name=".MainScreen">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+            </activity>
     </application>
 
 </manifest>

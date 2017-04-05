@@ -39,20 +39,23 @@ public class LoginCheck extends FragmentActivity implements GoogleApiClient.OnCo
     @Override
     protected void onStart(){
         super.onStart();
+        Intent intent = new Intent(LoginCheck.this, MainScreen.class);
 
         OptionalPendingResult<GoogleSignInResult> opr = Auth.GoogleSignInApi.silentSignIn(mGoogleApiClient);
         if(opr.isDone()){
             GoogleSignInResult result = opr.get();
             GoogleSignInAccount account = result.getSignInAccount();
             Toast.makeText(LoginCheck.this, account.getId(), Toast.LENGTH_LONG).show();
+            startActivity(intent);
             finish();
         }else if(AccessToken.getCurrentAccessToken() != null){
             Toast.makeText(LoginCheck.this, AccessToken.getCurrentAccessToken().getUserId().toString(), Toast.LENGTH_LONG).show();
+            startActivity(intent);
             finish();
         }else{
             Toast.makeText(LoginCheck.this, "Need Sign in :)", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(LoginCheck.this, LoginOverlayActivity.class);
-            startActivity(intent);
+            Intent goToLogin = new Intent(LoginCheck.this, LoginOverlayActivity.class);
+            startActivity(goToLogin);
         }
     }
 
