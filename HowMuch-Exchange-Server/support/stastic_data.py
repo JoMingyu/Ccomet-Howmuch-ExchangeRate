@@ -1,9 +1,13 @@
+# -*- coding: utf-8 -*-
+
 import calendar
 from time import strftime, localtime
 
-from pandas import DataFrame
-
-from database import Database
+from pandas import DataFrame, Series
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+from database.database import Database
+import datetime
 
 
 class ExploitRate:
@@ -13,17 +17,16 @@ class ExploitRate:
         self.db = Database()
 
     def get_by_section(self, section):
-        to_date = strftime("%Y-%m-%d %I:%M", localtime())
+        to_date = strftime("%Y-%m-%d", localtime())
 
-        #쿼리를 날릴 때 범위를 정하기 위해 월, 달, 일을 나눔
+        # 쿼리를 날릴 때 범위를 정하기 위해 월, 달, 일을 나눔
         day = int(to_date[8:10]) - section
         year = int(to_date[:4])
         month = int(to_date[5:7])
 
-        #현재 일수 보다 범위가 클경우 전달부터 하도록 함 ex) current 10일 범위가 30일경우 전달 20부터 10일까지
+        # 현재 일수 보다 범위가 클경우 전달부터 하도록 함 ex) current 10일 범위가 30일경우 전달 20부터 10일까지
         if day < 1:
             if month == 1:
-                year -= 1
                 month = 12
             else:
                 month -= 1
@@ -40,15 +43,15 @@ class ExploitRate:
         from_date = to_date[:5] + month + to_date[7:]
         from_date = from_date[:8] + day + from_date[10:]
 
-        #src,dct가 같은 것중 에서 between(from_date ~ to_date)에 대한 정보를 가져옴
-        query = "SELECT * FROM test WHERE src='{0}' and dct='{1}' BETWEEN '{2}' and '{3}';"\
-                .format(self.src, self.dct, from_date, to_date)
-        print(query)#example
+        # src,dct가 같은 것중 에서 between(from_date ~ to_date)에 대한 정보를 가져옴
+        query = "SELECT * FROM daily_exchange_rate WHERE src_nation='{0}' and dst_nation='{1}' BETWEEN '{2}' and '{3}';" \
+            .format(self.src, self.dct, from_date, to_date)
+        print(query)  # example
         res = self.db.execute(query)
 
         return res
 
-    #from_date ~ to_date 까지의 환율 정보를 받아 평균을 냄
+    # from_date ~ to_date 까지의 환율 정보를 받아 평균을 냄
     def exchange_average(self, data_list):
         count = 0
         sum = 0
@@ -60,10 +63,25 @@ class ExploitRate:
         average = sum / count
         return average
 
-#test
+    # data를 받아서 그중에서 exchange_rate와 date를 써서 그래프를 만듬
+    def make_graph(self, data):
+        x = [mdates.date2num(i['date']) for i in data]
+        y = [i['exchange_rate'] for i in data]
+
+        fig, ax = plt.subplots()
+
+        ax.plot_date(x, y, 'b-')
+
+        hfmt = mdates.DateFormatter('%m/%d')
+        ax.xaxis.set_major_formatter(hfmt)
+
+        fig.autofmt_xdate()
+        # plt.savefig('test.png') test.png 로 그래프 파일 저장
+        plt.show()
+
+# test
 if __name__ == '__main__':
     a = ExploitRate("KRW", "USD")
 
     temp = a.get_by_section(30)
-    data = DataFrame(data=temp, columns=['src', 'dct', 'uploadDate', 'rate'])
-    print(data)
+    a.make_graph(temp)

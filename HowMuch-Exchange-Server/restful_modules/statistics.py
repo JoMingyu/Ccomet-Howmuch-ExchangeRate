@@ -1,11 +1,13 @@
+# -*- coding: utf-8 -*-
+
 from flask import request, jsonify
 from flask_restful import Resource
 
-from database import Database
+from database import database
 
 
 class Statistics(Resource):
-    db = Database()
+    db = database.Database()
 
     def get(self):
         # 통계적 정보 조회
