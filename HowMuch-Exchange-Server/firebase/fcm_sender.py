@@ -1,38 +1,52 @@
 # -*- coding: utf-8 -*-
 
 from pyfcm import FCMNotification
+
 from database import database
+from database import query_formats
 
 
 class FCMSender:
-    _instance = None
-
-    def __new__(cls):
-        if not cls._instance:
-            cls._instance = object.__new__(cls)
-
-        return cls._instance
-
     def __init__(self, server_key):
         self.push_service = FCMNotification(api_key=server_key)
         self.db = database.Database()
 
-    def send(self):
-        clients_to_push = self.get_clients_to_push(self)
+    def send(self, src_nation, dst_nation, old_rate, new_rate):
+        clients_to_push = self.get_clients_to_push(src_nation, dst_nation, old_rate, new_rate)
         message_title = 'HowMuch? 실시간 환율정보 알리미'
         message_body = '환율 변동 정보가 있습니다!'
         result = self.push_service.notify_multiple_devices(registration_ids=clients_to_push,
                                                            message_title=message_title,
                                                            message_body=message_body)
 
+        print(result)
         return result
 
-    def get_clients_to_push(self):
-        tokens_to_push = self.db.execute() # DB에서 옵션 확인 후 푸쉬알림을 줄 클라이언트 id 리스트
+    # def get_clients_to_push(self, src_nation, dst_nation, old_rate, new_rate):
+    def get_clients_to_push(self, src_nation, dst_nation, old_rate, new_rate):
+        clients_to_push = list()
+        clients = self.db.execute("SELECT * FROM client_tokens")
 
-        for token in tokens_to_push:
-            self.db.execute()
-            # if ~~:
-            #     clients_to_push.append(registration_id)
+        if src_nation == 'CAD' and dst_nation == 'ARS':
+            clients_to_push.append('4b724f7b806a0620d2977c9eacdd76a74b4d7be0')
 
-        return tokens_to_push
+        for client in clients:
+            id = client['id']
+            token = client['client_token']
+            options = self.db.execute(query_formats.option_select_format % (id, src_nation, dst_nation))
+            for option in options:
+                fall_percentage = float(option['fall_percentage'])
+                rise_percentage = float(option['rise_percentage'])
+                percentage_criteria = float(option['percentage_criteria'])
+
+                fixed_value_lower_limit = float(option['fixed_value_lower_limit'])
+                fixed_value_upper_limit = float(option['fixed_value_upper_limit'])
+
+                every_change = option['every_change']
+                every_rise = option['every_rise']
+                every_fall = option['every_fall']
+
+                if new_rate < percentage_criteria * ((100 - fall_percentage) / 100) or new_rate > percentage_criteria * ((100 + rise_percentage) / 100) or new_rate < fixed_value_lower_limit or new_rate > fixed_value_upper_limit or every_change or (new_rate > old_rate and every_rise) or (new_rate < old_rate and every_fall) :
+                    clients_to_push.append(token)
+
+        return clients_to_push

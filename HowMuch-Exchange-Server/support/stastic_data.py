@@ -76,7 +76,6 @@ class ExploitRate:
         ax.xaxis.set_major_formatter(hfmt)
 
         fig.autofmt_xdate()
-        # plt.savefig('test.png') test.png 로 그래프 파일 저장
         plt.show()
 
 # test
