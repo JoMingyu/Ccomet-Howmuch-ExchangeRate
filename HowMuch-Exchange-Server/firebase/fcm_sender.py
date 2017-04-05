@@ -15,12 +15,14 @@ class FCMSender:
         clients_to_push = self.get_clients_to_push(src_nation, dst_nation, old_rate, new_rate)
         message_title = 'HowMuch? 실시간 환율정보 알리미'
         message_body = '환율 변동 정보가 있습니다!'
-        result = self.push_service.notify_multiple_devices(registration_ids=clients_to_push,
-                                                           message_title=message_title,
-                                                           message_body=message_body)
-
-        print(result)
-        return result
+        print(len(clients_to_push))
+        if len(clients_to_push) == 0:
+            pass
+        else:
+            result = self.push_service.notify_multiple_devices(registration_ids=clients_to_push,
+                                                               message_title=message_title,
+                                                               message_body=message_body)
+            print(result)
 
     # def get_clients_to_push(self, src_nation, dst_nation, old_rate, new_rate):
     def get_clients_to_push(self, src_nation, dst_nation, old_rate, new_rate):
