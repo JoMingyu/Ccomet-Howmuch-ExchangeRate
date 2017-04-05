@@ -11,12 +11,14 @@ class PushThread(threading.Thread):
 
         self.term = 5
         self.p = exchange_rate_parser.Parser()
-        self.parse_count = 0
+        self.parse_count = 1
 
     def run(self):
-        time.sleep(3)
+        time.sleep(1)
 
-        print(self.get_current_timestamp(), 'Parse Count', ++self.parse_count, 'Started')
+        print(self.get_current_timestamp(), 'Parse Count', self.parse_count, 'Started')
+        self.parse_count += 1
+
         for country_code in self.p.code_list:
             json_data = self.p.get_exchange_rate(country_code)
             rate_list = self.p.process_data(json_data)

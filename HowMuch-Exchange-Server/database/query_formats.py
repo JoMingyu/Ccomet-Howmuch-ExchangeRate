@@ -18,9 +18,10 @@ boolean_options_update_format = "UPDATE options SET every_change=%s, every_rise=
 option_select_format = "SELECT * FROM options WHERE id='%s' AND src_nation='%s' AND dst_nation='%s'"
 
 # 환율
-exchange_rate_delete = "DELETE FROM current_exchange_rates WHERE src_nation='%s' AND dst_nation='%s'"
+exchange_rate_delete_format = "DELETE FROM current_exchange_rates WHERE src_nation='%s' AND dst_nation='%s'"
 exchange_rate_insert_format = "INSERT INTO current_exchange_rates(src_nation, dst_nation, exchange_rate) VALUES('%s', '%s', %f)"
 exchange_rate_select_format = "SELECT exchange_rate FROM current_exchange_rates WHERE src_nation='%s' AND dst_nation='%s'"
+identical_code_select_format = "SELECT exchange_rate FROM current_exchange_rates WHERE src_nation='%s' AND dst_nation='=X'"
 
 # 하루 단위 환율
 daily_exchange_rate_insert_format = "INSERT INTO daily_exchange_rate("

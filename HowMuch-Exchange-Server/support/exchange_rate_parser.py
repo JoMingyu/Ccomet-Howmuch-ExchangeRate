@@ -41,28 +41,25 @@ class Parser:
         response = requests.get(self.APIUrl + src + "/" + self.code_string + ".json")
         return response.json()
 
-    def process_data(self, json_dict):
+    @staticmethod
+    def process_data(json_dict):
         tuple_list = []
 
         for dictData in json_dict:
             string = dictData['name']
-            dct = string[:3]
-            src = string[3:6]
+            src = string[:3]
+            dst = string[3:6]
 
             rate = round(dictData['rate'], 3)
 
-            if src == dct or src == '=X':
+            if src == dst:
                 continue
 
-            data = (src, dct, rate)
+            data = (src, dst, rate)
             tuple_list.append(data)
 
         return tuple_list
 
-    def commit_data(self, currency_info):
-        try:
-            self.db.execute(query_formats.exchange_rate_delete % currency_info[0], currency_info[1])
-        except TypeError as e:
-            pass
-
-        self.db.execute(query_formats.exchange_rate_insert_format % (currency_info[0], currency_info[1], currency_info[2]))
+    def commit_data(self, exchange_rates):
+        self.db.execute(query_formats.exchange_rate_delete_format % (exchange_rates[0], exchange_rates[1]))
+        self.db.execute(query_formats.exchange_rate_insert_format % (exchange_rates[0], exchange_rates[1], exchange_rates[2]))
