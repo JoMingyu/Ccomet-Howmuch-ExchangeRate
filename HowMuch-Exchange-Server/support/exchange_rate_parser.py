@@ -50,7 +50,6 @@ class Parser:
             src = string[3:6]
 
             rate = round(dictData['rate'], 3)
-            print(rate)
 
             if src == dct or src == '=X':
                 continue

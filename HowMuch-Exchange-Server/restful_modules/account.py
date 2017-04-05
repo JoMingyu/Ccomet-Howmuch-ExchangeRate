@@ -59,7 +59,7 @@ class SignUp(Resource):
 class SignIn(Resource):
     # 로그인
     # SNS 미연결 시
-    db = Database()
+    db = database.Database()
 
     def post(self):
         id = request.form['id']
