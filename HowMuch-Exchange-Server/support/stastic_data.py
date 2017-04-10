@@ -79,8 +79,8 @@ class ExploitRate:
         plt.show()
 
 # test
-if __name__ == '__main__':
-    a = ExploitRate("KRW", "USD")
-
-    temp = a.get_by_section(30)
-    a.make_graph(temp)
+# if __name__ == '__main__':
+#     a = ExploitRate("KRW", "USD")
+#
+#     temp = a.get_by_section(30)
+#     a.make_graph(temp)

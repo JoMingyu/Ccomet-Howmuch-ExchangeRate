@@ -70,9 +70,22 @@
           <file leaf-file-name="exchange_rate_parser.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/support/exchange_rate_parser.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="439">
-                  <caret line="95" column="120" lean-forward="false" selection-start-line="95" selection-start-column="120" selection-end-line="95" selection-end-column="120" />
+                <state relative-caret-position="631">
+                  <caret line="95" column="40" lean-forward="false" selection-start-line="95" selection-start-column="40" selection-end-line="95" selection-end-column="40" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="stastic_data.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/support/stastic_data.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="187">
+                  <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#25#40#0" expanded="true" />
+                    <marker date="1491821716677" expanded="true" signature="1225:1326" ph="SELECT * FRO... daily_exchange_rate" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -141,8 +154,8 @@
           <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/main.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="96">
-                  <caret line="16" column="40" lean-forward="false" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+                <state relative-caret-position="425">
+                  <caret line="25" column="24" lean-forward="true" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
                   <folding>
                     <element signature="e#25#48#0" expanded="true" />
                     <marker date="1491820858306" expanded="true" signature="649:668" ph="delete from " />
@@ -196,7 +209,6 @@
         <option value="$PROJECT_DIR$/server/main.py" />
         <option value="$PROJECT_DIR$/database/__init__.py" />
         <option value="$PROJECT_DIR$/restful_modules/account.py" />
-        <option value="$PROJECT_DIR$/support/stastic_data.py" />
         <option value="$PROJECT_DIR$/firebase/push_thread.py" />
         <option value="$PROJECT_DIR$/temp/table_dropper.py" />
         <option value="$PROJECT_DIR$/firebase/fcm_sender.py" />
@@ -208,6 +220,7 @@
         <option value="$PROJECT_DIR$/database/query_formats.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/support/exchange_rate_parser.py" />
+        <option value="$PROJECT_DIR$/support/stastic_data.py" />
       </list>
     </option>
   </component>
@@ -622,7 +635,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35835096" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15539113" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -810,13 +823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/support/stastic_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="36" lean-forward="true" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/pyfcm/fcm.py" />
     <entry file="file://$PROJECT_DIR$/temp/table_dropper.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -904,6 +910,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="24" lean-forward="true" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+          <folding>
+            <element signature="e#25#48#0" expanded="true" />
+            <marker date="1491820858306" expanded="true" signature="649:668" ph="delete from " />
+            <marker date="1491820858306" expanded="true" signature="704:723" ph="delete from " />
+            <marker date="1491820858306" expanded="true" signature="759:787" ph="delete from " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/support/stastic_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#25#40#0" expanded="true" />
+            <marker date="1491821716677" expanded="true" signature="1225:1326" ph="SELECT * FRO... daily_exchange_rate" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/database/query_formats.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -937,23 +967,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="16" column="40" lean-forward="false" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-          <folding>
-            <element signature="e#25#48#0" expanded="true" />
-            <marker date="1491820858306" expanded="true" signature="649:668" ph="delete from " />
-            <marker date="1491820858306" expanded="true" signature="704:723" ph="delete from " />
-            <marker date="1491820858306" expanded="true" signature="759:787" ph="delete from " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/support/exchange_rate_parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="95" column="120" lean-forward="false" selection-start-line="95" selection-start-column="120" selection-end-line="95" selection-end-column="120" />
+        <state relative-caret-position="631">
+          <caret line="95" column="40" lean-forward="false" selection-start-line="95" selection-start-column="40" selection-end-line="95" selection-end-column="40" />
           <folding />
         </state>
       </provider>
