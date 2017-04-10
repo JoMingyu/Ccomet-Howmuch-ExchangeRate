@@ -14,4 +14,10 @@
     <string name="id_token_fmt">ID Token : %s</string>
 
     <string name="play_services_error_fmt">Google Play Services Error : %i</string>
+
+    <string name="need_id_input">아이디를 입력해주세요</string>
+    <string name="need_password_input">암호를 입력해주세요</string>
+    <string name="id_exist">이미 가입된 아이디입니다.</string>
+    <string name="good_id">멋진 아이디네요!</string>
+    <string name="good_password">비밀로 할게요!</string>
 </resources>

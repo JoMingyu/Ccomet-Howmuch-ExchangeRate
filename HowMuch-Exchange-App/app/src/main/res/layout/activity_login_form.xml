@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:text="Text"
+            android:text="@string/need_id_input"
             android:visivle="true"/>
 
     </LinearLayout>
@@ -72,6 +72,9 @@
             android:layout_width="180sp"
             android:layout_height="50sp"
             android:gravity="center"
+            android:textColor="#000000"
+            android:password="true"
+            android:inputType="textPassword"
             android:background="@drawable/loginform_edittext"/>
     </LinearLayout>
 
@@ -86,7 +89,7 @@
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:text="Text"
+            android:text="@string/need_password_input"
             android:visivle="true"/>
 
     </LinearLayout>
