@@ -85,7 +85,7 @@ class Parser:
 
             if not rows:
                 self.db.execute(query_formats.exchange_rate_delete_format % (src_nation, dst_nation))
-                self.db.execute(query_formats.exchange_rate_insert_format % (src_nation, dst_nation, new_rate, average))
+                self.db.execute(query_formats.exchange_rate_insert_format % (src_nation, dst_nation, new_rate))
 
             elif rows[0]['exchange_rate'] != new_rate:
                 # 환율 변동이 있을 경우
@@ -93,4 +93,4 @@ class Parser:
                 self.fcm_sender.send(src_nation, dst_nation, old_rate, new_rate)
 
                 self.db.execute(query_formats.exchange_rate_delete_format % (src_nation, dst_nation))
-                self.db.execute(query_formats.exchange_rate_insert_format % (src_nation, dst_nation, new_rate, average))
+                self.db.execute(query_formats.exchange_rate_insert_format % (src_nation, dst_nation, new_rate))
