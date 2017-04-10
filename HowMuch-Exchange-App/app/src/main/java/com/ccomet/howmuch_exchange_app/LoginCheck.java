@@ -25,7 +25,7 @@ public class LoginCheck extends FragmentActivity implements GoogleApiClient.OnCo
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FacebookSdk.sdkInitialize(LoginCheck.this);
+        //FacebookSdk.sdkInitialize(LoginCheck.this);
         setContentView(R.layout.activity_login_check);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
@@ -42,16 +42,19 @@ public class LoginCheck extends FragmentActivity implements GoogleApiClient.OnCo
         Intent intent = new Intent(LoginCheck.this, MainScreen.class);
 
         OptionalPendingResult<GoogleSignInResult> opr = Auth.GoogleSignInApi.silentSignIn(mGoogleApiClient);
-        if(opr.isDone()){
+        if(opr.isDone()) {
             GoogleSignInResult result = opr.get();
             GoogleSignInAccount account = result.getSignInAccount();
             Toast.makeText(LoginCheck.this, account.getId(), Toast.LENGTH_LONG).show();
             startActivity(intent);
             finish();
+            /*
         }else if(AccessToken.getCurrentAccessToken() != null){
             Toast.makeText(LoginCheck.this, AccessToken.getCurrentAccessToken().getUserId().toString(), Toast.LENGTH_LONG).show();
             startActivity(intent);
             finish();
+        }
+        */
         }else{
             Toast.makeText(LoginCheck.this, "Need Sign in :)", Toast.LENGTH_LONG).show();
             Intent goToLogin = new Intent(LoginCheck.this, LoginOverlayActivity.class);
