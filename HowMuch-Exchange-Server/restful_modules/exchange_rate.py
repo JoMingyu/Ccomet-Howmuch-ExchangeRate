@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flask import request, jsonify
+from flask import request
 from flask_restful import Resource
 
 from database import query_formats
@@ -22,4 +22,4 @@ class ExchangeRate(Resource):
 
         data = {'exchange_rate': rows[0]['exchange_rate']}
 
-        return jsonify(result=data)
+        return data

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flask import request, jsonify
+from flask import request
 from flask_restful import Resource
 
 from database import query_formats
@@ -29,7 +29,7 @@ class Option(Resource):
                     'every_fall': rows[0]['every_fall']
                     }
 
-            return jsonify(result=data), 200
+            return data
         else:
             return '', 204
 
@@ -102,7 +102,7 @@ class Option(Resource):
     @staticmethod
     def row_exists(uuid, src_nation, dst_nation):
         query = "SELECT * FROM options WHERE uuid='%s' AND src_nation='%s' AND dst_nation='%s'"
-        rows = Database().execute(query % (uuid, src_nation, dst_nation))
+        rows = database.Database().execute(query % (uuid, src_nation, dst_nation))
         if rows:
             return True
         else:

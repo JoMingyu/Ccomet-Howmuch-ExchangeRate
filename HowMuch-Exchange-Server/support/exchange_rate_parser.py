@@ -4,6 +4,7 @@ import requests
 
 from database import query_formats
 from database import database
+from firebase import fcm_sender
 
 
 class Parser:
@@ -36,6 +37,7 @@ class Parser:
         self.APIUrl = "https://api.manana.kr/exchange/rate/"
 
         self.db = database.Database()
+        self.fcm_sender = fcm_sender.FCMSender('AAAAGhKg7Ws:APA91bGTOrM2nmAwP31NoY7DcbqD5ZpYzupJwUyOStM-TD7zk7jddIrzUAUlM5wXd5Jz94kbz-ab7uazV8UTxGe89H5aeyl5vudLCceeCbihjgTOGPDqX6fQK5FVMwKEZ-T3vgt7vLBM')
 
     def get_exchange_rate(self, src):
         response = requests.get(self.APIUrl + src + "/" + self.code_string + ".json")
@@ -61,5 +63,22 @@ class Parser:
         return tuple_list
 
     def commit_data(self, exchange_rates):
-        self.db.execute(query_formats.exchange_rate_delete_format % (exchange_rates[0], exchange_rates[1]))
-        self.db.execute(query_formats.exchange_rate_insert_format % (exchange_rates[0], exchange_rates[1], exchange_rates[2]))
+        for exchange_rate in exchange_rates:
+            src_nation = exchange_rate[0]
+            dst_nation = exchange_rate[1]
+            new_rate = exchange_rate[2]
+
+            rows = self.db.execute(query_formats.exchange_rate_select_format % (src_nation, dst_nation))
+            # 기존 데이터
+
+            if not rows:
+                self.db.execute(query_formats.exchange_rate_delete_format % (src_nation, dst_nation))
+                self.db.execute(query_formats.exchange_rate_insert_format % (src_nation, dst_nation, new_rate))
+
+            elif rows[0]['exchange_rate'] != new_rate:
+                # 환율 변동이 있을 경우
+                old_rate = rows[0]['exchange_rate']
+                self.fcm_sender.send(src_nation, dst_nation, old_rate, new_rate)
+
+                self.db.execute(query_formats.exchange_rate_delete_format % (src_nation, dst_nation))
+                self.db.execute(query_formats.exchange_rate_insert_format % (src_nation, dst_nation, new_rate))
