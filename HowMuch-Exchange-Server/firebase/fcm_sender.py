@@ -29,9 +29,6 @@ class FCMSender:
         clients_to_push = list()
         clients = self.db.execute("SELECT * FROM client_tokens")
 
-        if src_nation == 'CAD' and dst_nation == 'ARS':
-            clients_to_push.append('coLv0q-qezA:APA91bFlZxDKqBdRlREiE2Iv--d5o1KM3xrf8U8XnuAFUfMmke1sJ4rUPuqTr5hBbMqEwGp16TSTsYmkv4M1ZcYBqFzvfpa_Y_tPt8V1UV9mdpt4pLJjCfyHYHqJKfkw7PCb5Mtga7E1')
-
         for client in clients:
             id = client['id']
             token = client['client_token']

@@ -33,5 +33,5 @@ if __name__ == '__main__':
     parse_and_push_thread.ParseThread().start()
     # 스레드 시작
 
-    app.run('10.156.145.120')
+    app.run(host='10.156.145.120', port=80)
     # app run
