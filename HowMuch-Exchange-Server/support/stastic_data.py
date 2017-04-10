@@ -1,11 +1,9 @@
 import calendar
 from time import strftime, localtime
 
-from pandas import DataFrame, Series
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from database.database import Database
-import datetime
 
 
 class ExploitRate:
@@ -74,11 +72,12 @@ class ExploitRate:
         ax.xaxis.set_major_formatter(hfmt)
 
         fig.autofmt_xdate()
-        # plt.savefig('test.png') test.png 로 그래프 파일 저장
+        plt.savefig('test.png')
         plt.show()
 
 # test
 if __name__ == '__main__':
+    #목적지
     a = ExploitRate("KRW", "USD")
 
     temp = a.get_by_section(30)

@@ -47,21 +47,31 @@ class Parser:
             dct = string[:3]
             src = string[3:6]
 
-            rate = round(dictData['rate'], 3)
-            print(rate)
-
             if src == dct or src == '=X':
                 continue
+            rate = round(dictData['rate'], 3)
 
-            data = (src, dct, rate)
+            average = self.average_of_exchange(src, dct, rate)
+            # print(average)
+            data = (src, dct, rate, average)
             tuple_list.append(data)
 
         return tuple_list
 
-    def commit_data(self, currency_info):
+    def average_of_exchange(self, src, dst, rate):
         try:
-            self.db.execute(query_formats.exchange_rate_delete % currency_info[0], currency_info[1])
-        except TypeError as e:
-            pass
+            temp = self.db.execute(query_formats.exchange_rate_select_format(src, dst))
+            average = round((temp[1] + rate) / 2, 3)
 
-        self.db.execute(query_formats.exchange_rate_insert_format % (currency_info[0], currency_info[1], currency_info[2]))
+        except TypeError as e:
+            average = rate
+
+        return average
+
+    def commit_data(self, currency_info):
+        # try:
+        #
+        # except TypeError as e:
+        #     pass
+        self.db.execute(query_formats.exchange_rate_delete % currency_info[0], currency_info[1])
+        # self.db.execute(query_formats.exchange_rate_insert_format % (currency_info[0], currency_info[1], currency_info[2], currency_info[3]))

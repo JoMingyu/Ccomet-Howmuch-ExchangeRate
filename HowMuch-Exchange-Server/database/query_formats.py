@@ -13,5 +13,5 @@ register_account_format = "INSERT INTO account(uuid, connected_sns, id, password
 register_sns_account_format = "INSERT INTO account(uuid, connected_sns) VALUES ('%s', true)"
 
 exchange_rate_delete = "DELETE FROM current_exchange_rates WHERE src_nation='%s' AND dst_nation='%s'"
-exchange_rate_insert_format = "INSERT INTO current_exchange_rates(src_nation, dst_nation, exchange_rate) VALUES('%s', '%s', %f)"
-exchange_rate_select_format = "SELECT exchange_rate FROM current_exchange_rates WHERE src_nation='%s' AND dst_nation='%s'"
+exchange_rate_insert_format = "INSERT INTO current_exchange_rates(src_nation, dst_nation, exchange_rate, exchange_average) VALUES('%s', '%s', %f, %f)"
+exchange_rate_select_format = "SELECT exchange_rate, exchange_average FROM current_exchange_rates WHERE src_nation='%s' AND dst_nation='%s'"

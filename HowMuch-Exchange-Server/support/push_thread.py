@@ -18,7 +18,6 @@ class PushThread(threading.Thread):
             rate_list = self.p.process_data(json_data)
 
             for exchange_rate in rate_list:
-                print(exchange_rate)
                 self.p.commit_data(exchange_rate)
 
         time.sleep(self.term * 60)
@@ -26,3 +25,5 @@ class PushThread(threading.Thread):
 if __name__ == '__main__':
     p = PushThread()
     p.start()
+    # a = "SELECT exchange_rate, exchange_average FROM current_exchange_rates WHERE src_nation='%s' AND dst_nation='%s'"
+    # temp = p.p.db.execute(a('AUD', 'ARS', 12))
