@@ -21,9 +21,14 @@ option_select_format = "SELECT * FROM options WHERE id='%s' AND src_nation='%s' 
 previous_exchange_rate_delete_format = "DELETE FROM previous_exchange_"
 
 exchange_rate_delete_format = "DELETE FROM current_exchange_rate WHERE src_nation='%s' AND dst_nation='%s'"
-exchange_rate_insert_format = "INSERT INTO current_exchange_rate(src_nation, dst_nation, exchange_rate, exchange_average) VALUES('%s', '%s', %f, %f)"
-exchange_rate_select_format = "SELECT exchange_rate, exchange_average FROM current_exchange_rate WHERE src_nation='%s' AND dst_nation='%s'"
+exchange_rate_insert_format = "INSERT INTO current_exchange_rate(src_nation, dst_nation, exchange_rate) VALUES('%s', '%s', %f)"
+exchange_rate_select_format = "SELECT exchange_rate FROM current_exchange_rate WHERE src_nation='%s' AND dst_nation='%s'"
 identical_code_select_format = "SELECT exchange_rate FROM current_exchange_rate WHERE src_nation='%s' AND dst_nation='=X'"
+
+# 환율 임시 테이블
+temp_exchange_rate_delete_format = "DELETE FROM temp_exchange_rate WHERE src_nation='%s' AND dst_nation='%s'"
+temp_exchange_rate_insert_format = "INSERT INTO temp_exchange_rate(src_nation, dst_nation, exchange_rate) VALUES('%s', '%s', %f, %f)"
+temp_exchange_rate_select_format = "SELECT exchange_rate FROM temp_exchange_rate WHERE src_nation='%s' AND dst_nation='%s'"
 
 # 하루 단위 환율
 daily_exchange_rate_insert_format = "INSERT INTO daily_exchange_rate("
