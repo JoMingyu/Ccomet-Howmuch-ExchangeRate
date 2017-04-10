@@ -51,16 +51,17 @@ class Parser:
             src = string[:3]
             dst = string[3:6]
 
-            if src == dst:
-                continue
             rate = round(dictData['rate'], 3)
 
-            average = self.average_of_exchange(src, dst, rate)
-            data = (src, dst, rate, average)
+            if src == dst or dst == '=X':
+                continue
 
+            average = self.average_of_exchange(src, dst, rate)
+
+            data = (src, dst, rate, average)
             tuple_list.append(data)
 
-            return tuple_list
+        return tuple_list
 
     def average_of_exchange(self, src, dst, rate):
         try:
@@ -73,23 +74,23 @@ class Parser:
         return average
 
     def commit_data(self, exchange_rates):
-        src_nation = exchange_rates[0]
-        dst_nation = exchange_rates[1]
-        new_rate = exchange_rates[2]
-        average = exchange_rates[3]
+        for exchange_rate in exchange_rates:
+            src_nation = exchange_rate[0]
+            dst_nation = exchange_rate[1]
+            new_rate = exchange_rate[2]
+            average = exchange_rate[3]
 
-        rows = self.db.execute(query_formats.exchange_rate_select_format % (src_nation, dst_nation))
-        # 기존 데이터
+            rows = self.db.execute(query_formats.exchange_rate_select_format % (src_nation, dst_nation))
+            # 기존 데이터
 
-        if not rows:
-            self.db.execute(query_formats.exchange_rate_delete_format % (src_nation, dst_nation))
-            self.db.execute(query_formats.exchange_rate_insert_format % (src_nation, dst_nation, new_rate, average))
+            if not rows:
+                self.db.execute(query_formats.exchange_rate_delete_format % (src_nation, dst_nation))
+                self.db.execute(query_formats.exchange_rate_insert_format % (src_nation, dst_nation, new_rate, average))
 
-        elif rows[0]['exchange_rate'] != new_rate:
-            # 환율 변동이 있을 경우
-            # old_rate = rows[0]['exchange_rate']
-            # self.fcm_sender.send(src_nation, dst_nation, old_rate, new_rate)
+            elif rows[0]['exchange_rate'] != new_rate:
+                # 환율 변동이 있을 경우
+                old_rate = rows[0]['exchange_rate']
+                self.fcm_sender.send(src_nation, dst_nation, old_rate, new_rate)
 
-            self.db.execute(query_formats.exchange_rate_delete_format % (src_nation, dst_nation))
-            self.db.execute(query_formats.exchange_rate_insert_format % (src_nation, dst_nation, new_rate, average))
-
+                self.db.execute(query_formats.exchange_rate_delete_format % (src_nation, dst_nation))
+                self.db.execute(query_formats.exchange_rate_insert_format % (src_nation, dst_nation, new_rate, average))
