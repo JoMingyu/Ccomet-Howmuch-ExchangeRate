@@ -43,8 +43,7 @@ class Parser:
         response = requests.get(self.APIUrl + src + "/" + self.code_string + ".json")
         return response.json()
 
-    @staticmethod
-    def process_data(json_dict):
+    def process_data(self, json_dict):
         tuple_list = []
 
         for dictData in json_dict:
@@ -54,26 +53,39 @@ class Parser:
 
             rate = round(dictData['rate'], 3)
 
-            if src == dst:
+            if src == dst or dst == '=X':
                 continue
 
-            data = (src, dst, rate)
+            average = self.average_of_exchange(src, dst, rate)
+
+            data = (src, dst, rate, average)
             tuple_list.append(data)
 
         return tuple_list
+
+    def average_of_exchange(self, src, dst, rate):
+        try:
+            temp = self.db.execute(query_formats.exchange_rate_select_format(src, dst))
+            average = round((temp[1] + rate) / 2, 3)
+
+        except TypeError as e:
+            average = rate
+
+        return average
 
     def commit_data(self, exchange_rates):
         for exchange_rate in exchange_rates:
             src_nation = exchange_rate[0]
             dst_nation = exchange_rate[1]
             new_rate = exchange_rate[2]
+            average = exchange_rate[3]
 
             rows = self.db.execute(query_formats.exchange_rate_select_format % (src_nation, dst_nation))
             # 기존 데이터
 
             if not rows:
                 self.db.execute(query_formats.exchange_rate_delete_format % (src_nation, dst_nation))
-                self.db.execute(query_formats.exchange_rate_insert_format % (src_nation, dst_nation, new_rate))
+                self.db.execute(query_formats.exchange_rate_insert_format % (src_nation, dst_nation, new_rate, average))
 
             elif rows[0]['exchange_rate'] != new_rate:
                 # 환율 변동이 있을 경우
@@ -81,4 +93,4 @@ class Parser:
                 self.fcm_sender.send(src_nation, dst_nation, old_rate, new_rate)
 
                 self.db.execute(query_formats.exchange_rate_delete_format % (src_nation, dst_nation))
-                self.db.execute(query_formats.exchange_rate_insert_format % (src_nation, dst_nation, new_rate))
+                self.db.execute(query_formats.exchange_rate_insert_format % (src_nation, dst_nation, new_rate, average))

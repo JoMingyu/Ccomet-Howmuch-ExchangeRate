@@ -9,11 +9,15 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/HowMuch_Exchange_Server$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1491821221151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="HowMuch-Exchange-Server" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf>
       <file leaf-file-name="query_formats.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/query_formats.py">
@@ -80,6 +84,167 @@
         </entry>
       </file>
     </leaf>
+=======
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="query_formats.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/database/query_formats.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="408">
+                  <caret line="24" column="139" lean-forward="true" selection-start-line="24" selection-start-column="139" selection-end-line="24" selection-end-column="139" />
+                  <folding>
+                    <marker date="1491820175051" expanded="true" signature="57:143" ph="INSERT INTO account... " />
+                    <marker date="1491820175051" expanded="true" signature="176:253" ph="INSERT INTO account... " />
+                    <marker date="1491820175051" expanded="true" signature="287:332" ph="INSERT INTO client_tokens... " />
+                    <marker date="1491820175051" expanded="true" signature="368:507" ph="INSERT INTO options... " />
+                    <marker date="1491820175051" expanded="true" signature="537:672" ph="UPDATE optio... " />
+                    <marker date="1491820175051" expanded="true" signature="704:834" ph="INSERT INTO options... " />
+                    <marker date="1491820175051" expanded="true" signature="865:992" ph="UPDATE optio... " />
+                    <marker date="1491820175051" expanded="true" signature="1028:1150" ph="INSERT INTO options... " />
+                    <marker date="1491820175051" expanded="true" signature="1185:1303" ph="UPDATE optio... " />
+                    <marker date="1491820175051" expanded="true" signature="1330:1405" ph="SELECT * FRO... options" />
+                    <marker date="1491820175051" expanded="true" signature="1453:1483" ph="DELETE FROM " />
+                    <marker date="1491820175051" expanded="true" signature="1517:1592" ph="DELETE FROM " />
+                    <marker date="1491820175051" expanded="true" signature="1625:1742" ph="INSERT INTO current_exchange_rate... " />
+                    <marker date="1491820175051" expanded="true" signature="1775:1882" ph="SELECT excha... current_exchange_rate" />
+                    <marker date="1491820175051" expanded="true" signature="1916:2005" ph="SELECT excha... current_exchange_rate" />
+                    <marker date="1491820175051" expanded="true" signature="2056:2088" ph="INSERT INTO daily_exchange_rate... " />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="exchange_rate.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/restful_modules/exchange_rate.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="136">
+                  <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="statistics.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/restful_modules/statistics.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="51">
+                  <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="exchange_rate_parser.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/support/exchange_rate_parser.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="439">
+                  <caret line="95" column="120" lean-forward="false" selection-start-line="95" selection-start-column="120" selection-end-line="95" selection-end-column="120" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="exchange_rate_parser.py" pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/Desktop/HowMuch-Exchange-Server/support/exchange_rate_parser.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="234">
+                  <caret line="64" column="4" lean-forward="false" selection-start-line="64" selection-start-column="4" selection-end-line="72" selection-end-column="22" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="fcm_sender.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/firebase/fcm_sender.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="153">
+                  <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+                  <folding>
+                    <marker date="1491753336000" expanded="true" signature="1169:1196" ph="SELECT * FRO... client_tokens" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="database.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/database/database.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="129">
+                  <caret line="13" column="23" lean-forward="false" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/restful_modules/__init__.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="account.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/restful_modules/account.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="34">
+                  <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+                  <folding>
+                    <marker date="1491753336000" expanded="true" signature="544:578" ph="SELECT * FRO... account" />
+                    <marker date="1491753336000" expanded="true" signature="1165:1199" ph="SELECT * FRO... account" />
+                    <marker date="1491753336000" expanded="true" signature="1407:1439" ph="SELECT * FRO... account" />
+                    <marker date="1491753336000" expanded="true" signature="2107:2139" ph="SELECT * FRO... account" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/main.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="96">
+                  <caret line="16" column="40" lean-forward="false" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+                  <folding>
+                    <element signature="e#25#48#0" expanded="true" />
+                    <marker date="1491820858306" expanded="true" signature="649:668" ph="delete from " />
+                    <marker date="1491820858306" expanded="true" signature="704:723" ph="delete from " />
+                    <marker date="1491820858306" expanded="true" signature="759:787" ph="delete from " />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="socketserver.py" pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/socketserver.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="171">
+                  <caret line="453" column="0" lean-forward="false" selection-start-line="453" selection-start-column="0" selection-end-line="453" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="parse_and_push_thread.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/firebase/parse_and_push_thread.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="476">
+                  <caret line="30" column="45" lean-forward="true" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+>>>>>>> a916b2ad36178df3f8b4e09158851334ad5b80ab
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -99,28 +264,43 @@
       <list>
         <option value="$PROJECT_DIR$/server/main.py" />
         <option value="$PROJECT_DIR$/database/__init__.py" />
-        <option value="$PROJECT_DIR$/database/database.py" />
         <option value="$PROJECT_DIR$/restful_modules/account.py" />
         <option value="$PROJECT_DIR$/support/stastic_data.py" />
         <option value="$PROJECT_DIR$/firebase/push_thread.py" />
-        <option value="$PROJECT_DIR$/support/exchange_rate_parser.py" />
         <option value="$PROJECT_DIR$/temp/table_dropper.py" />
         <option value="$PROJECT_DIR$/firebase/fcm_sender.py" />
         <option value="$PROJECT_DIR$/firebase/parse_and_push_thread.py" />
         <option value="$PROJECT_DIR$/restful_modules/exchange_rate.py" />
         <option value="$PROJECT_DIR$/restful_modules/option.py" />
         <option value="$PROJECT_DIR$/restful_modules/statistics.py" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/database/query_formats.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/restful_modules/test.py" />
         <option value="$PROJECT_DIR$/test.py" />
+=======
+        <option value="$PROJECT_DIR$/database/database.py" />
+        <option value="$PROJECT_DIR$/database/query_formats.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/support/exchange_rate_parser.py" />
+>>>>>>> a916b2ad36178df3f8b4e09158851334ad5b80ab
       </list>
     </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
+<<<<<<< HEAD
     <option name="width" value="1936" />
+=======
+    <option name="width" value="1932" />
+>>>>>>> a916b2ad36178df3f8b4e09158851334ad5b80ab
     <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
@@ -138,7 +318,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -224,11 +403,13 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -268,6 +449,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="HowMuch-Exchange-Server" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="C:\Users\dsm2016\Desktop\1. Project\Ccomet-Howmuch-ExchangeRate\HowMuch-Exchange-Server\main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -286,6 +468,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="HowMuch-Exchange-Server" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/temp/table_dropper.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -304,6 +487,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="HowMuch-Exchange-Server" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -322,10 +506,75 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="HowMuch-Exchange-Server" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/firebase/fcm_sender.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="HowMuch-Exchange-Server" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="HowMuch-Exchange-Server" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="HowMuch-Exchange-Server" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
       <method />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -340,6 +589,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="HowMuch-Exchange-Server" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -355,7 +605,18 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <module name="HowMuch-Exchange-Server" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -368,6 +629,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="HowMuch-Exchange-Server" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -387,6 +649,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="HowMuch-Exchange-Server" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;.&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
@@ -430,6 +693,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
@@ -437,12 +701,22 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.320296" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+=======
+    <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10229645" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+>>>>>>> a916b2ad36178df3f8b4e09158851334ad5b80ab
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35835096" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31078225" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -453,16 +727,51 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/firebase/parse_and_push_thread.py</url>
+          <line>30</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/database/query_formats.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1491820175051" expanded="true" signature="57:143" ph="INSERT INTO account... " />
+            <marker date="1491820175051" expanded="true" signature="176:253" ph="INSERT INTO account... " />
+            <marker date="1491820175051" expanded="true" signature="287:332" ph="INSERT INTO client_tokens... " />
+            <marker date="1491820175051" expanded="true" signature="368:507" ph="INSERT INTO options... " />
+            <marker date="1491820175051" expanded="true" signature="537:672" ph="UPDATE optio... " />
+            <marker date="1491820175051" expanded="true" signature="704:834" ph="INSERT INTO options... " />
+            <marker date="1491820175051" expanded="true" signature="865:992" ph="UPDATE optio... " />
+            <marker date="1491820175051" expanded="true" signature="1028:1150" ph="INSERT INTO options... " />
+            <marker date="1491820175051" expanded="true" signature="1185:1303" ph="UPDATE optio... " />
+            <marker date="1491820175051" expanded="true" signature="1330:1405" ph="SELECT * FRO... options" />
+            <marker date="1491820175051" expanded="true" signature="1453:1483" ph="DELETE FROM " />
+            <marker date="1491820175051" expanded="true" signature="1517:1592" ph="DELETE FROM " />
+            <marker date="1491820175051" expanded="true" signature="1625:1742" ph="INSERT INTO current_exchange_rate... " />
+            <marker date="1491820175051" expanded="true" signature="1775:1882" ph="SELECT excha... current_exchange_rate" />
+            <marker date="1491820175051" expanded="true" signature="1916:2005" ph="SELECT excha... current_exchange_rate" />
+            <marker date="1491820175051" expanded="true" signature="2056:2088" ph="INSERT INTO daily_exchange_rate... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/firebase/parse_and_push_thread.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -547,20 +856,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/pymysql/connections.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="911" column="0" lean-forward="false" selection-start-line="911" selection-start-column="0" selection-end-line="911" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Helpable/Helpable-Server/restful_modules/user/profile_picture.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/pymysql/connections.py" />
+    <entry file="file://$PROJECT_DIR$/../../Helpable/Helpable-Server/restful_modules/user/profile_picture.py" />
     <entry file="file://$PROJECT_DIR$/dd/__init__.py" />
     <entry file="file://$PROJECT_DIR$/database/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -595,13 +892,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/threading.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="827" column="8" lean-forward="false" selection-start-line="827" selection-start-column="8" selection-end-line="827" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/threading.py" />
     <entry file="file://$PROJECT_DIR$/temp/crypto_supporter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -616,20 +907,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/pyfcm/fcm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/pyfcm/fcm.py" />
     <entry file="file://$PROJECT_DIR$/temp/table_dropper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -637,59 +915,154 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../Voltalk/restful_modules/usage.py" />
+    <entry file="file://$PROJECT_DIR$/restful_modules/option.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2408">
+          <caret line="102" column="49" lean-forward="true" selection-start-line="102" selection-start-column="49" selection-end-line="102" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/temp/table_dropper.py">
+=======
     <entry file="file://$PROJECT_DIR$/restful_modules/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Voltalk/restful_modules/usage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-360">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/firebase/fcm_sender.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/restful_modules/account.py">
+>>>>>>> a916b2ad36178df3f8b4e09158851334ad5b80ab
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <marker date="1491753336000" expanded="true" signature="544:578" ph="SELECT * FRO... account" />
+            <marker date="1491753336000" expanded="true" signature="1165:1199" ph="SELECT * FRO... account" />
+            <marker date="1491753336000" expanded="true" signature="1407:1439" ph="SELECT * FRO... account" />
+            <marker date="1491753336000" expanded="true" signature="2107:2139" ph="SELECT * FRO... account" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="13" column="23" lean-forward="false" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/../../Voltalk/restful_modules/usage.py">
+=======
+    <entry file="file://$PROJECT_DIR$/firebase/fcm_sender.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <marker date="1491753336000" expanded="true" signature="1169:1196" ph="SELECT * FRO... client_tokens" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restful_modules/statistics.py">
+>>>>>>> a916b2ad36178df3f8b4e09158851334ad5b80ab
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/firebase/fcm_sender.py">
+=======
+    <entry file="file://$USER_HOME$/Desktop/HowMuch-Exchange-Server/support/exchange_rate_parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="64" column="4" lean-forward="false" selection-start-line="64" selection-start-column="4" selection-end-line="72" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/socketserver.py">
+>>>>>>> a916b2ad36178df3f8b4e09158851334ad5b80ab
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="453" column="0" lean-forward="false" selection-start-line="453" selection-start-column="0" selection-end-line="453" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firebase/parse_and_push_thread.py">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="47">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
             <element signature="e#25#50#0" expanded="false" />
           </folding>
+=======
+        <state relative-caret-position="476">
+          <caret line="30" column="45" lean-forward="true" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
+          <folding />
+>>>>>>> a916b2ad36178df3f8b4e09158851334ad5b80ab
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/restful_modules/option.py">
+    <entry file="file://$PROJECT_DIR$/database/query_formats.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="2408">
           <caret line="102" column="49" lean-forward="true" selection-start-line="102" selection-start-column="49" selection-end-line="102" selection-end-column="49" />
           <folding>
             <element signature="e#25#50#0" expanded="false" />
+=======
+        <state relative-caret-position="408">
+          <caret line="24" column="139" lean-forward="true" selection-start-line="24" selection-start-column="139" selection-end-line="24" selection-end-column="139" />
+          <folding>
+            <marker date="1491820175051" expanded="true" signature="57:143" ph="INSERT INTO account... " />
+            <marker date="1491820175051" expanded="true" signature="176:253" ph="INSERT INTO account... " />
+            <marker date="1491820175051" expanded="true" signature="287:332" ph="INSERT INTO client_tokens... " />
+            <marker date="1491820175051" expanded="true" signature="368:507" ph="INSERT INTO options... " />
+            <marker date="1491820175051" expanded="true" signature="537:672" ph="UPDATE optio... " />
+            <marker date="1491820175051" expanded="true" signature="704:834" ph="INSERT INTO options... " />
+            <marker date="1491820175051" expanded="true" signature="865:992" ph="UPDATE optio... " />
+            <marker date="1491820175051" expanded="true" signature="1028:1150" ph="INSERT INTO options... " />
+            <marker date="1491820175051" expanded="true" signature="1185:1303" ph="UPDATE optio... " />
+            <marker date="1491820175051" expanded="true" signature="1330:1405" ph="SELECT * FRO... options" />
+            <marker date="1491820175051" expanded="true" signature="1453:1483" ph="DELETE FROM " />
+            <marker date="1491820175051" expanded="true" signature="1517:1592" ph="DELETE FROM " />
+            <marker date="1491820175051" expanded="true" signature="1625:1742" ph="INSERT INTO current_exchange_rate... " />
+            <marker date="1491820175051" expanded="true" signature="1775:1882" ph="SELECT excha... current_exchange_rate" />
+            <marker date="1491820175051" expanded="true" signature="1916:2005" ph="SELECT excha... current_exchange_rate" />
+            <marker date="1491820175051" expanded="true" signature="2056:2088" ph="INSERT INTO daily_exchange_rate... " />
+>>>>>>> a916b2ad36178df3f8b4e09158851334ad5b80ab
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/restful_modules/exchange_rate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
+        <state relative-caret-position="136">
           <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+<<<<<<< HEAD
           <folding>
             <element signature="e#25#50#0" expanded="false" />
           </folding>
+=======
+          <folding />
+>>>>>>> a916b2ad36178df3f8b4e09158851334ad5b80ab
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/restful_modules/statistics.py">
+    <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="144">
           <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
@@ -712,12 +1085,22 @@
           <caret line="23" column="28" lean-forward="false" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="28" />
           <folding>
             <element signature="e#25#41#0" expanded="true" />
+=======
+        <state relative-caret-position="96">
+          <caret line="16" column="40" lean-forward="false" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+          <folding>
+            <element signature="e#25#48#0" expanded="true" />
+            <marker date="1491820858306" expanded="true" signature="649:668" ph="delete from " />
+            <marker date="1491820858306" expanded="true" signature="704:723" ph="delete from " />
+            <marker date="1491820858306" expanded="true" signature="759:787" ph="delete from " />
+>>>>>>> a916b2ad36178df3f8b4e09158851334ad5b80ab
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/query_formats.py">
+    <entry file="file://$PROJECT_DIR$/support/exchange_rate_parser.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="624">
           <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
@@ -746,6 +1129,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+=======
+        <state relative-caret-position="439">
+          <caret line="95" column="120" lean-forward="false" selection-start-line="95" selection-start-column="120" selection-end-line="95" selection-end-column="120" />
+>>>>>>> a916b2ad36178df3f8b4e09158851334ad5b80ab
           <folding />
         </state>
       </provider>

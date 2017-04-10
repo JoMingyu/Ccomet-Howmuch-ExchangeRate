@@ -10,8 +10,8 @@ from pymysql import IntegrityError
 
 class Database:
     host = 'localhost'
-    user = 'root'
-    password = 'uursty199'
+    user = 'zhsir123'
+    password = 'dhk0654'
     db = 'howmuch_exchange'
     charset = 'utf8'
 
