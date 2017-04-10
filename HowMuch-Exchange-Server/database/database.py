@@ -1,9 +1,13 @@
+# -*- coding: utf-8 -*-
+
 import pymysql
 from pymysql import IntegrityError
 
 # Created by planb 2017. 03. 28
 # db = Database()
 # db.execute("SELECT FROM table_name WHERE column='", column_name, "')")
+
+
 class Database:
     host = 'localhost'
     user = 'zhsir123'

@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import calendar
 from time import strftime, localtime
 
@@ -72,7 +74,6 @@ class ExploitRate:
         ax.xaxis.set_major_formatter(hfmt)
 
         fig.autofmt_xdate()
-        plt.savefig('test.png')
         plt.show()
 
 # test
