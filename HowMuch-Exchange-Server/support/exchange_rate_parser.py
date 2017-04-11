@@ -70,7 +70,6 @@ class Parser:
             new_rate = exchange_rate[2]
 
             rows = self.db.execute(query_formats.exchange_rate_select_format % (src_nation, dst_nation))
-            old_rate = rows[0]['exchange_rate']
             # 기존 데이터
 
             self.db.execute(query_formats.exchange_rate_delete_format % (src_nation, dst_nation))
@@ -79,6 +78,7 @@ class Parser:
 
             if rows:
                 # 기존 데이터가 이미 있었던 경우
+                old_rate = rows[0]['exchange_rate']
                 if old_rate != new_rate:
                     # 환율 변동이 있을 경우
                     self.fcm_sender.send(src_nation, dst_nation, old_rate, new_rate)
