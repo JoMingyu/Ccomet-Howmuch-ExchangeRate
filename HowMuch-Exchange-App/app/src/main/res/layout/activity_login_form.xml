@@ -49,7 +49,7 @@
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:text="@string/need_id_input"
-            android:visivle="true"/>
+            android:visible="true"/>
 
     </LinearLayout>
 
@@ -90,7 +90,7 @@
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:text="@string/need_password_input"
-            android:visivle="true"/>
+            android:visible="true"/>
 
     </LinearLayout>
 
