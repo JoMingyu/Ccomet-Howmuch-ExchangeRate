@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import threading
-import time
+import time, datetime
 from support import exchange_rate_parser
 
 
@@ -19,7 +19,6 @@ class ParseThread(threading.Thread):
         time.sleep(1)
         while True:
             print(self.get_current_timestamp(), 'Parse Count', self.parse_count, 'Started')
-            self.parse_count += 1
 
             for country_code in self.p.code_list:
                 json_data = self.p.get_exchange_rate(country_code)
@@ -28,14 +27,14 @@ class ParseThread(threading.Thread):
                 rate_list = self.p.process_data(json_data)
                 # rate_list = tuples in list, (src, dst, rate)
 
-                self.p.commit_data(rate_list)
+                self.p.commit_data(rate_list, self.parse_count)
                 # 환율 정보 적용
 
                 print(self.get_current_timestamp(), country_code, 'parse success.')
 
+            self.parse_count += 1
             time.sleep(30)
 
     @staticmethod
     def get_current_timestamp():
-        now = time.localtime()
-        return '[%02d-%02d %02d:%02d:%02d]' % (now.tm_mon, now.tm_mday, now.tm_hour, now.tm_min, now.tm_sec)
+        return '[' + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ']'
