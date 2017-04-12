@@ -11,6 +11,7 @@ class Parser:
     _instance = None
 
     def __new__(cls):
+        # 싱글톤 패턴
         if not cls._instance:
             cls._instance = object.__new__(cls)
 
@@ -18,7 +19,7 @@ class Parser:
 
     def __init__(self):
         country_codes_all = "AED,AFN,ALL,AMD,ANG,AOA,ARS,AUD,AWG,AZN,BAM,USD,BDT,BGN,BHD,BIF,SGD,BRL,BSD,INR,BWP,BYR,BZD,CAD,CDF,CHW,CHF,CLP,CNY,COU,CRC,CUP,CVE,CZK,DJF,DKK,DOP,DZD,EGP,ERN,ETB,EUR,FJD,FKP,GBP,GEL,GHS,GIP,GMD,GNF,GTQ,GYD,HKD,MOP,HNL,HRK,HUF,IDR,ILS,NPR,IQD,IRR,ISK,JMD,JOD,JPY,KES,KGS,THB,KMF,KPW,KRW,KWD,KYD,KZT,LBP,LKR,LRD,LSL,LYD,MAD,MDL,MGA,MKD,MNT,MRO,MUR,MVR,MWK,MXV,MYR,MZN,NAD,NGN,NIO,NOK,NZD,MOR,PEN,PGK,PHP,PKR,PLN,PYG,QAR,RON,RSD,RUB,RWF,SAR,SBD,SCR,SDG,SEK,SHP,SLL,SOS,SRD,SSP,STD,SYP,SZL,TJS,TMT,TND,TOD,TRY,TTD,TWD,TZS,UAH,UGX,USN,ZWL,UYU,UZS,VEF,VND,VUV,WST,XAF,XCD,XOF,XPF,YER,ZAR,ZMW"
-        #country_code by string
+        # country_code by string
         # 볼리비아 기금부호(BOV) 제외 모든 화폐 단위 코드
 
         country_list_all = country_codes_all.split(",")
@@ -62,7 +63,7 @@ class Parser:
 
         return tuple_list
 
-    def commit_data(self, exchange_rates):
+    def commit_data(self, exchange_rates, parse_count):
         for exchange_rate in exchange_rates:
             src_nation = exchange_rate[0]
             dst_nation = exchange_rate[1]
@@ -71,24 +72,26 @@ class Parser:
             rows = self.db.execute(query_formats.exchange_rate_select_format % (src_nation, dst_nation))
             # 기존 데이터
 
-            if not rows:
-                self.db.execute(query_formats.exchange_rate_delete_format % (src_nation, dst_nation))
-                self.db.execute(query_formats.exchange_rate_insert_format % (src_nation, dst_nation, new_rate))
+            self.db.execute(query_formats.exchange_rate_delete_format % (src_nation, dst_nation))
+            self.db.execute(query_formats.exchange_rate_insert_format % (src_nation, dst_nation, new_rate))
+            # 새로운 데이터 삽입
+
+            if rows:
+                # 기존 데이터가 이미 있었던 경우
+                old_rate = rows[0]['exchange_rate']
+                if old_rate != new_rate:
+                    # 환율 변동이 있을 경우
+                    self.fcm_sender.send(src_nation, dst_nation, old_rate, new_rate)
+                    # fcm send
+
+            average_rows = self.db.execute(query_formats.temp_exchange_rate_select_format % (src_nation, dst_nation))
+            # 하루 단위 평균값 저장 임시 테이블
+            if average_rows:
+                # temp_exchange_rate에 데이터가 이미 있는 경우
+                average = round((old_rate + average_rows[0]['exchange_rate'] * parse_count) / (parse_count + 1), 3)
 
                 self.db.execute(query_formats.temp_exchange_rate_delete_format % (src_nation, dst_nation))
+                self.db.execute(query_formats.temp_exchange_rate_insert_format % (src_nation, dst_nation, average))
+            else:
+                # temp_exchange_rate에 데이터가 없는 경우
                 self.db.execute(query_formats.temp_exchange_rate_insert_format % (src_nation, dst_nation, new_rate))
-
-            elif rows[0]['exchange_rate'] != new_rate:
-                # 환율 변동이 있을 경우
-                old_rate = rows[0]['exchange_rate']
-                self.fcm_sender.send(src_nation, dst_nation, old_rate, new_rate)
-
-                self.db.execute(query_formats.exchange_rate_delete_format % (src_nation, dst_nation))
-                self.db.execute(query_formats.exchange_rate_insert_format % (src_nation, dst_nation, new_rate))
-
-                #평균 값 구하기
-                average = self.db.execute(query_formats.temp_exchange_rate_select_format(src_nation, dst_nation))
-                average = round((old_rate + average) / 2, 3)
-
-                self.db.execute(query_formats.temp_exchange_rate_delete_format(src_nation, dst_nation))
-                self.db.execute(query_formats.temp_exchange_rate_insert_format(src_nation, dst_nation, average))
