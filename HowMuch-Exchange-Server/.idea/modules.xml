@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../.idea/Ccomet-Howmuch-ExchangeRate.iml" filepath="$PROJECT_DIR$/../.idea/Ccomet-Howmuch-ExchangeRate.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/HowMuch-Exchange-Server.iml" filepath="$PROJECT_DIR$/.idea/HowMuch-Exchange-Server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../.idea/Python.iml" filepath="$PROJECT_DIR$/../../.idea/Python.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../.idea/Study.iml" filepath="$PROJECT_DIR$/../../../.idea/Study.iml" />
     </modules>
   </component>
