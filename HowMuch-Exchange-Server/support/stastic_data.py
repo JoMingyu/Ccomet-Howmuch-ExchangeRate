@@ -79,7 +79,7 @@ class ExploitRate:
         plt.savefig('temp.png')
 
         f = open("temp.png", "rb")
-        data = f.readlines()
+        image_bin = f.readlines()
         f.close()
 
-        return data
+        return image_bin
