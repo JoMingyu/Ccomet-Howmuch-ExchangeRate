@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 
 import calendar
+from PIL import Image
+import io
 from time import strftime, localtime
 
-from pandas import DataFrame, Series
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from database.database import Database
-import datetime
 
 
 class ExploitRate:
@@ -78,8 +78,12 @@ class ExploitRate:
         fig.autofmt_xdate()
         plt.savefig('temp.png')
 
-        f = open("temp.png", "rb")
-        image_bin = f.readlines()
-        f.close()
+        buf = io.BytesIO()
+        plt.savefig(buf, format='png')
 
-        return image_bin
+        buf.seek(0)
+        img_hex_data = buf.getvalue()
+
+        buf.close()
+
+        return img_hex_data
