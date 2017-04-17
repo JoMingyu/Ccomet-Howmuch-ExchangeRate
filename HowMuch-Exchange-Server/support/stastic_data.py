@@ -79,6 +79,3 @@ class ExploitRate:
         fig.autofmt_xdate()
         plt.savefig("exchange_graph_img/"+self.src+"_"+self.dst+".png")
 
-a = ExploitRate('KRW', 'USD')
-temp = a.get_by_section(30)
-a.make_graph(temp)
