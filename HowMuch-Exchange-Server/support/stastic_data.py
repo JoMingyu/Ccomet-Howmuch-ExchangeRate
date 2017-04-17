@@ -11,9 +11,9 @@ from database.database import Database
 
 
 class ExploitRate:
-    def __init__(self, src, dct):
+    def __init__(self, src, dst):
         self.src = src
-        self.dct = dct
+        self.dst = dst
         self.db = Database()
 
     def get_by_section(self, section):
@@ -45,7 +45,7 @@ class ExploitRate:
 
         # src,dct가 같은 것중 에서 between(from_date ~ to_date)에 대한 정보를 가져옴
         query = "SELECT * FROM daily_exchange_rate WHERE src_nation='{0}' and dst_nation='{1}' BETWEEN '{2}' and '{3}';" \
-            .format(self.src, self.dct, from_date, to_date)
+            .format(self.src, self.dst, from_date, to_date)
         print(query)  # example
         res = self.db.execute(query)
 
@@ -75,15 +75,10 @@ class ExploitRate:
         hfmt = mdates.DateFormatter('%m/%d')
         ax.xaxis.set_major_formatter(hfmt)
 
+        #/exchange_graph_img 디렉토리에 src_dst.png로 저장
         fig.autofmt_xdate()
-        plt.savefig('temp.png')
+        plt.savefig("exchange_graph_img/"+self.src+"_"+self.dst+".png")
 
-        buf = io.BytesIO()
-        plt.savefig(buf, format='png')
-
-        buf.seek(0)
-        img_hex_data = buf.getvalue()
-
-        buf.close()
-
-        return img_hex_data
+a = ExploitRate('KRW', 'USD')
+temp = a.get_by_section(30)
+a.make_graph(temp)
