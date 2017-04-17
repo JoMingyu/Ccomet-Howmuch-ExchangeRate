@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 
 import calendar
+from PIL import Image
+import io
 from time import strftime, localtime
 
-from pandas import DataFrame, Series
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from database.database import Database
-import datetime
 
 
 class ExploitRate:
@@ -63,7 +63,7 @@ class ExploitRate:
         average = sum / count
         return average
 
-    # data를 받아서 그중에서 exchange_rate와 date를 써서 그래프를 만듬
+    # data를 받아서 그중에서 exchange_rate와 date를 써서 그래프를 만들고 image파일 binary로 반환
     def make_graph(self, data):
         x = [mdates.date2num(i['date']) for i in data]
         y = [i['exchange_rate'] for i in data]
@@ -76,11 +76,14 @@ class ExploitRate:
         ax.xaxis.set_major_formatter(hfmt)
 
         fig.autofmt_xdate()
-        plt.show()
+        plt.savefig('temp.png')
 
-# test
-# if __name__ == '__main__':
-#     a = ExploitRate("KRW", "USD")
-#
-#     temp = a.get_by_section(30)
-#     a.make_graph(temp)
+        buf = io.BytesIO()
+        plt.savefig(buf, format='png')
+
+        buf.seek(0)
+        img_hex_data = buf.getvalue()
+
+        buf.close()
+
+        return img_hex_data
