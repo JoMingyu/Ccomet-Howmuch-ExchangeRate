@@ -6,7 +6,7 @@ import datetime
 from database import query_formats
 from database import database
 from firebase import fcm_sender
-
+from support import stastic_data
 
 class Parser:
     _instance = None
@@ -40,7 +40,11 @@ class Parser:
 
         self.db = database.Database()
         self.fcm_sender = fcm_sender.FCMSender('AAAAGhKg7Ws:APA91bGTOrM2nmAwP31NoY7DcbqD5ZpYzupJwUyOStM-TD7zk7jddIrzUAUlM5wXd5Jz94kbz-ab7uazV8UTxGe89H5aeyl5vudLCceeCbihjgTOGPDqX6fQK5FVMwKEZ-T3vgt7vLBM')
+
         self.last_average_date = datetime.date.today()
+
+        self.section = 30
+        self.exploit = stastic_data.ExploitRate('temp', 'temp')
 
     def get_exchange_rate(self, src):
         response = requests.get(self.APIUrl + src + "/" + self.code_string + ".json")
@@ -104,3 +108,8 @@ class Parser:
                 # temp_exchange_rate에 데이터가 없는 경우
                 self.db.execute(query_formats.temp_exchange_rate_insert_format % (src_nation, dst_nation, new_rate))
 
+            self.exploit.src = src_nation
+            self.exploit.dst = dst_nation
+
+            graph_data = self.exploit.get_by_section(self.section)
+            self.exploit.make_graph(graph_data)

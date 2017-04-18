@@ -46,7 +46,6 @@ class ExploitRate:
         # src,dct가 같은 것중 에서 between(from_date ~ to_date)에 대한 정보를 가져옴
         query = "SELECT * FROM daily_exchange_rate WHERE src_nation='{0}' and dst_nation='{1}' BETWEEN '{2}' and '{3}';" \
             .format(self.src, self.dst, from_date, to_date)
-        print(query)  # example
         res = self.db.execute(query)
 
         return res
@@ -77,5 +76,4 @@ class ExploitRate:
 
         #/exchange_graph_img 디렉토리에 src_dst.png로 저장
         fig.autofmt_xdate()
-        plt.savefig("exchange_graph_img/"+self.src+"_"+self.dst+".png")
-
+        plt.savefig("support/exchange_graph_img/"+str(self.src)+"_"+str(self.dst)+".png")
