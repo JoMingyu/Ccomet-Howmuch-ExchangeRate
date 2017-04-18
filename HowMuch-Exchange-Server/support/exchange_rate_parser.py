@@ -103,4 +103,3 @@ class Parser:
             else:
                 # temp_exchange_rate에 데이터가 없는 경우
                 self.db.execute(query_formats.temp_exchange_rate_insert_format % (src_nation, dst_nation, new_rate))
-
