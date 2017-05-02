@@ -1,13 +1,12 @@
 from flask import Flask
 from flask_restful import Api
 
+from database import database
 from restful_modules import account
 from restful_modules import exchange_rate
 from restful_modules import option
 from restful_modules import statistics
-
-from firebase import parse_and_push_thread
-from database import database
+from support import parse_and_push_thread
 
 app = Flask(__name__)
 api = Api(app)
