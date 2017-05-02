@@ -29,9 +29,9 @@ class Database:
                                           password=self.password,
                                           db=self.db,
                                           charset=self.charset)
-        self.cursor = self.connection.cursor(pymysql.cursors.DictCursor)
 
     def execute(self, *args):
+        cursor = self.connection.cursor(pymysql.cursors.DictCursor)
         query = ''
         for arg in args:
             query += arg
@@ -39,11 +39,11 @@ class Database:
         try:
             if 'SELECT' in query:
                 # SELECT문은 fetchall() 메소드 적용
-                self.cursor.execute(query)
-                result = self.cursor.fetchall()
+                cursor.execute(query)
+                result = cursor.fetchall()
             else:
                 # INSERT, UPDATE, DELETE문은 commit() 메소드 적용
-                self.cursor.execute(query)
+                cursor.execute(query)
                 result = self.connection.commit()
 
             return result
