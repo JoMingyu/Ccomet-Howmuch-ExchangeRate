@@ -108,8 +108,8 @@ class Parser:
                 # temp_exchange_rate에 데이터가 없는 경우
                 self.db.execute(query_formats.temp_exchange_rate_insert_format % (src_nation, dst_nation, new_rate))
 
-            self.exploit.src = src_nation
-            self.exploit.dst = dst_nation
-
-            graph_data = self.exploit.get_by_section(self.section)
-            self.exploit.make_graph(graph_data)
+            # self.exploit.src = src_nation
+            # self.exploit.dst = dst_nation
+            #
+            # graph_data = self.exploit.get_by_section(self.section)
+            # self.exploit.make_graph(graph_data)
