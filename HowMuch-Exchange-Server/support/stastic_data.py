@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
 
 import calendar
+from PIL import Image
+import io
 from time import strftime, localtime
 
-from pandas import DataFrame, Series
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from database.database import Database
-import datetime
 
 
 class ExploitRate:
-    def __init__(self, src, dct):
+    def __init__(self, src, dst):
         self.src = src
-        self.dct = dct
+        self.dst = dst
         self.db = Database()
 
     def get_by_section(self, section):
@@ -45,8 +45,7 @@ class ExploitRate:
 
         # src,dct가 같은 것중 에서 between(from_date ~ to_date)에 대한 정보를 가져옴
         query = "SELECT * FROM daily_exchange_rate WHERE src_nation='{0}' and dst_nation='{1}' BETWEEN '{2}' and '{3}';" \
-            .format(self.src, self.dct, from_date, to_date)
-        print(query)  # example
+            .format(self.src, self.dst, from_date, to_date)
         res = self.db.execute(query)
 
         return res
@@ -63,7 +62,7 @@ class ExploitRate:
         average = sum / count
         return average
 
-    # data를 받아서 그중에서 exchange_rate와 date를 써서 그래프를 만듬
+    # data를 받아서 그중에서 exchange_rate와 date를 써서 그래프를 만들고 image파일 binary로 반환
     def make_graph(self, data):
         x = [mdates.date2num(i['date']) for i in data]
         y = [i['exchange_rate'] for i in data]
@@ -75,12 +74,6 @@ class ExploitRate:
         hfmt = mdates.DateFormatter('%m/%d')
         ax.xaxis.set_major_formatter(hfmt)
 
+        #/exchange_graph_img 디렉토리에 src_dst.png로 저장
         fig.autofmt_xdate()
-        plt.show()
-
-# test
-if __name__ == '__main__':
-    a = ExploitRate("KRW", "USD")
-
-    temp = a.get_by_section(30)
-    a.make_graph(temp)
+        plt.savefig("support/exchange_graph_img/"+str(self.src)+"_"+str(self.dst)+".png")

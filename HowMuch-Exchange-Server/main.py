@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from flask import Flask
 from flask_restful import Api
 
@@ -33,5 +31,4 @@ if __name__ == '__main__':
     parse_and_push_thread.ParseThread().start()
     # 스레드 시작
 
-    app.run(host='10.156.145.120', port=80)
-    # app run
+    #app.run(host='10.156.145.120', port=80)
