@@ -46,6 +46,7 @@ class Database:
                 cursor.execute(query)
                 result = self.connection.commit()
 
+            cursor.close()
             return result
         except IntegrityError:
             # 문제 발생 시
