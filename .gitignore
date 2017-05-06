@@ -88,6 +88,12 @@ ENV/
 # Rope project settings
 .ropeproject
 
+<<<<<<< HEAD
+=======
+# IDE resource
+.idea/
+
+>>>>>>> 11b3b2f4a3f043849618b3759218e7177f66e36d
 # Built application files
 *.apk
 *.ap_
@@ -142,4 +148,8 @@ google-services.json
 # Freeline
 freeline.py
 freeline/
+<<<<<<< HEAD
 freeline_project_description.json
+=======
+freeline_project_description.json
+>>>>>>> 11b3b2f4a3f043849618b3759218e7177f66e36d

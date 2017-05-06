@@ -2,4 +2,22 @@
     <string name="app_name">HowMuch-Exchange-App</string>
     <string name="server_client_id">111981686123-um2lib7g4urb5cbubtngafe7uhc75vi2.apps.googleusercontent.com</string>
     <string name="facebook_app_id">1889074367976183</string>
+
+    <string name="signed_in_fmt">Signed in as : %s</string>
+    <string name="signed_in">Signed in</string>
+    <string name="signing_in">Signing in...</string>
+    <string name="signed_out">Signed out</string>
+    <string name="signed_in_err">"Error : Please check logs."</string>
+
+    <string name="loading">Loading...</string>
+    <string name="auth_code_fmt">Auth code : %s</string>
+    <string name="id_token_fmt">ID Token : %s</string>
+
+    <string name="play_services_error_fmt">Google Play Services Error : %i</string>
+
+    <string name="need_id_input">아이디를 입력해주세요</string>
+    <string name="need_password_input">암호를 입력해주세요</string>
+    <string name="id_exist">이미 가입된 아이디입니다.</string>
+    <string name="good_id">멋진 아이디네요!</string>
+    <string name="good_password">비밀로 할게요!</string>
 </resources>
