@@ -99,17 +99,18 @@ class Parser:
                 self.db.execute(query_formats.temp_exchange_rate_delete_format % (src_nation, dst_nation))
                 self.db.execute(query_formats.temp_exchange_rate_insert_format % (src_nation, dst_nation, average))
 
-                #오늘 날짜를 구해서 만약 날짜가 지났다면 2000-00-00 형식으로 daily_exchange_rate 테이블에 값을 넣음
+                # 오늘 날짜를 구해서 만약 날짜가 지났다면 2000-00-00 형식으로 daily_exchange_rate 테이블에 값을 넣음
                 temp = datetime.date.today()
                 if temp.day != self.last_average_date.day:
-                    self.db.execute(query_formats.daily_exchange_rate_insert_format % (src_nation, dst_nation, temp.day.strftime('%Y-%m-%d'), average))
+                    self.db.execute(query_formats.daily_exchange_rate_insert_format %
+                                    (src_nation, dst_nation, temp.strftime('%Y-%m-%d'), average))
                     self.last_average_date = temp
             else:
                 # temp_exchange_rate에 데이터가 없는 경우
                 self.db.execute(query_formats.temp_exchange_rate_insert_format % (src_nation, dst_nation, new_rate))
 
-            self.exploit.src = src_nation
-            self.exploit.dst = dst_nation
-
-            graph_data = self.exploit.get_by_section(self.section)
-            self.exploit.make_graph(graph_data)
+            # self.exploit.src = src_nation
+            # self.exploit.dst = dst_nation
+            #
+            # graph_data = self.exploit.get_by_section(self.section)
+            # self.exploit.make_graph(graph_data)
