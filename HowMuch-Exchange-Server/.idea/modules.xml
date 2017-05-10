@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/HowMuch-Exchange-Server.iml" filepath="$PROJECT_DIR$/.idea/HowMuch-Exchange-Server.iml" />
+      <module fileurl="file://C:\Users\dsm2016\Documents\Study\Python\Ccomet-Howmuch-ExchangeRate\HowMuch-Exchange-Server\.idea\HowMuch-Exchange-Server.iml" filepath="C:\Users\dsm2016\Documents\Study\Python\Ccomet-Howmuch-ExchangeRate\HowMuch-Exchange-Server\.idea\HowMuch-Exchange-Server.iml" />
     </modules>
   </component>
 </project>
