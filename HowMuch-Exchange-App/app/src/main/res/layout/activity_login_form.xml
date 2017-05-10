@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center|top"
+    android:orientation="vertical"
+    android:background="#333333"
+    tools:context="com.ccomet.howmuch_exchange_app.LoginForm">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20sp"
+        android:src="@drawable/howmuch_loginform_logo"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="80sp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_height="50sp"
+            android:layout_width="50sp"
+            android:scaleType="center"
+            android:background="@drawable/loginform_icon_style"
+            android:src="@drawable/loginform_icon"/>
+
+        <EditText
+            android:layout_width="180sp"
+            android:layout_height="50sp"
+            android:gravity="center"
+            android:background="@drawable/loginform_edittext"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5sp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:text="@string/need_id_input"
+            android:visible="true"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="30sp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_height="50sp"
+            android:layout_width="50sp"
+            android:scaleType="center"
+            android:background="@drawable/loginform_icon_style"
+            android:src="@drawable/loginform_icon"/>
+
+        <EditText
+            android:layout_width="180sp"
+            android:layout_height="50sp"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:password="true"
+            android:inputType="textPassword"
+            android:background="@drawable/loginform_edittext"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5sp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:text="@string/need_password_input"
+            android:visible="true"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40sp"
+        android:background="#663366"
+        android:text="Sign in"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:id="@+id/confirm_button"/>
+
+</LinearLayout>
