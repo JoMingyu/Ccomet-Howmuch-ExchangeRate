@@ -21,7 +21,6 @@ class ExchangeRate(Resource):
             rows = self.db.execute(query_formats.exchange_rate_select_format % (src_nation, dst_nation))
 
         data = {'exchange_rate': rows[0]['exchange_rate']}
-        self.db.close()
 
         return data
 
@@ -40,7 +39,5 @@ class ExchangeRateAll(Resource):
                     'exchange_rate' : row['exchange_rate']}
 
             response_list.append(data)
-
-        self.db.close()
 
         return response_list
