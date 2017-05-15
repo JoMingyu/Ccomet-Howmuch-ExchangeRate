@@ -7,7 +7,6 @@ from restful_modules import exchange_rate
 from restful_modules import option
 from restful_modules import statistics
 from support import parse_and_push_thread
-from support import stastic_data
 
 app = Flask(__name__)
 api = Api(app)
