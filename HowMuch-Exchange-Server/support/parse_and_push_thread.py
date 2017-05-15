@@ -38,3 +38,7 @@ class ParseThread(threading.Thread):
     @staticmethod
     def get_current_timestamp():
         return '[' + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ']'
+
+
+p = ParseThread()
+p.start()

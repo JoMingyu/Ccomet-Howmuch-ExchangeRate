@@ -94,7 +94,7 @@ class Parser:
             # 하루 단위 평균값 저장 임시 테이블
             if average_rows:
                 # temp_exchange_rate에 데이터가 이미 있는 경우
-                average = round((old_rate + average_rows[0]['exchange_rate'] * parse_count) / (parse_count + 1), 3)
+                average = round((new_rate + average_rows[0]['exchange_rate']) / 2, 3)
 
                 self.db.execute(query_formats.temp_exchange_rate_delete_format % (src_nation, dst_nation))
                 self.db.execute(query_formats.temp_exchange_rate_insert_format % (src_nation, dst_nation, average))
@@ -104,7 +104,9 @@ class Parser:
                 if temp.day != self.last_average_date.day:
                     self.db.execute(query_formats.daily_exchange_rate_insert_format %
                                     (src_nation, dst_nation, temp.strftime('%Y-%m-%d'), average))
-                    self.last_average_date = temp
+                    
+                    if src_nation in 'USD' and dst_nation in 'TRY':
+                        self.last_average_date = temp
             else:
                 # temp_exchange_rate에 데이터가 없는 경우
                 self.db.execute(query_formats.temp_exchange_rate_insert_format % (src_nation, dst_nation, new_rate))
