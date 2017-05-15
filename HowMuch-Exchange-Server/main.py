@@ -28,12 +28,12 @@ def clear_tables():
 # clear_tables()
 
 if __name__ == '__main__':
+    pass 
     # print('-- Server Started')
     # parse_and_push_thread.ParseThread().start()
     # 스레드 시작
 
-
-        # app.run(host='localhost', port=80)
+    # app.run(host='10.156.145.120', port=80)
 
 
 #그래프에 쓸 데이터 예시
@@ -46,4 +46,3 @@ if __name__ == '__main__':
 #     temp['date'] = i['date'].strftime('%Y-%m-%d')
 #     temp['exchange_rate'] = i['exchange_rate']
 #     receive_data.append(temp)
-
