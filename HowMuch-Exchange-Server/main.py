@@ -28,7 +28,7 @@ def clear_tables():
 # clear_tables()
 
 if __name__ == '__main__':
-    pass 
+    pass
     # print('-- Server Started')
     # parse_and_push_thread.ParseThread().start()
     # 스레드 시작
