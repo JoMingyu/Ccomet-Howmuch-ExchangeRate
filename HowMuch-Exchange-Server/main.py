@@ -7,6 +7,7 @@ from restful_modules import exchange_rate
 from restful_modules import option
 from restful_modules import statistics
 from support import parse_and_push_thread
+from support import stastic_data
 
 app = Flask(__name__)
 api = Api(app)
@@ -27,8 +28,22 @@ def clear_tables():
 # clear_tables()
 
 if __name__ == '__main__':
-    print('-- Server Started')
-    parse_and_push_thread.ParseThread().start()
+    # print('-- Server Started')
+    # parse_and_push_thread.ParseThread().start()
     # 스레드 시작
 
-    # app.run(host='localhost', port=80)
+
+        # app.run(host='localhost', port=80)
+
+
+#그래프에 쓸 데이터 예시
+# temp = stastic_data.ExploitRate('ARS', 'AUD')
+# data = temp.get_by_section(7)
+# receive_data = list()
+#
+# for i in data:
+#     temp = dict()
+#     temp['date'] = i['date'].strftime('%Y-%m-%d')
+#     temp['exchange_rate'] = i['exchange_rate']
+#     receive_data.append(temp)
+

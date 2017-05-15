@@ -1,14 +1,10 @@
 # -*- coding: utf-8 -*-
 
 import calendar
-from PIL import Image
-import io
 from time import strftime, localtime
 
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
 from database.database import Database
-
+from database import query_formats
 
 class ExploitRate:
     def __init__(self, src, dst):
@@ -44,22 +40,12 @@ class ExploitRate:
         from_date = from_date[:8] + day + from_date[10:]
 
         # src,dct가 같은 것중 에서 between(from_date ~ current_date)에 대한 정보를 가져옴
-        query = "SELECT * FROM daily_exchange_rate WHERE src_nation='{0}' and dst_nation='{1}' AND date > '{2}';" \
-            .format(self.src, self.dst, from_date)
+        query = query_formats.daily_exchange_rate_select_format % (self.src, self.dst, from_date)
         res = self.db.execute(query)
 
         return res
 
 
 #test
-# temp = stastic_data.ExploitRate('ARS', 'AUD')
-# data = temp.get_by_section(7)
-# receive_data = list()
-#
-# for i in data:
-#     temp = dict()
-#     temp['date'] = i['date'].strftime('%Y-%m-%d')
-#     temp['exchange_rate'] = i['exchange_rate']
-#     receive_data.append(temp)
 #
 # print(receive_data)

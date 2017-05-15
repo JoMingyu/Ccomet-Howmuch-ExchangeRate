@@ -35,3 +35,6 @@ temp_exchange_rate_select_format = "SELECT exchange_rate FROM temp_exchange_rate
 
 # 하루 단위 환율
 daily_exchange_rate_insert_format = "INSERT INTO daily_exchange_rate(src_nation, dst_nation, date, exchange_rate) VALUES('%s', '%s', '%s', %f)"
+
+#구간 환율
+daily_exchange_rate_select_format = "SELECT * FROM daily_exchange_rate WHERE src_nation='%s' and dst_nation='%s' AND date > '%s'"
