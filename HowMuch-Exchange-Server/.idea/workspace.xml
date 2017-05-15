@@ -21,8 +21,8 @@
           <file leaf-file-name="exchange_rate_parser.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/support/exchange_rate_parser.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="704">
-                  <caret line="106" column="20" lean-forward="false" selection-start-line="106" selection-start-column="20" selection-end-line="106" selection-end-column="20" />
+                <state relative-caret-position="718">
+                  <caret line="108" column="88" lean-forward="false" selection-start-line="108" selection-start-column="88" selection-end-line="108" selection-end-column="88" />
                   <folding />
                 </state>
               </provider>
@@ -31,30 +31,30 @@
           <file leaf-file-name="query_formats.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/database/query_formats.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
-                  <caret line="24" column="121" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="121" />
+                <state relative-caret-position="527">
+                  <caret line="31" column="71" lean-forward="false" selection-start-line="31" selection-start-column="71" selection-end-line="31" selection-end-column="71" />
                   <folding>
-                    <marker date="1494824468959" expanded="true" signature="57:143" ph="INSERT INTO account... " />
-                    <marker date="1494824468959" expanded="true" signature="176:253" ph="INSERT INTO account... " />
-                    <marker date="1494824468959" expanded="true" signature="287:332" ph="INSERT INTO client_tokens... " />
-                    <marker date="1494824468959" expanded="true" signature="368:507" ph="INSERT INTO options... " />
-                    <marker date="1494824468959" expanded="true" signature="537:672" ph="UPDATE optio... " />
-                    <marker date="1494824468959" expanded="true" signature="704:834" ph="INSERT INTO options... " />
-                    <marker date="1494824468959" expanded="true" signature="865:992" ph="UPDATE optio... " />
-                    <marker date="1494824468959" expanded="true" signature="1028:1150" ph="INSERT INTO options... " />
-                    <marker date="1494824468959" expanded="true" signature="1185:1303" ph="UPDATE optio... " />
-                    <marker date="1494824468959" expanded="true" signature="1330:1405" ph="SELECT * FRO... options" />
-                    <marker date="1494824468959" expanded="true" signature="1453:1483" ph="DELETE FROM " />
-                    <marker date="1494824468959" expanded="true" signature="1517:1592" ph="DELETE FROM " />
-                    <marker date="1494824468959" expanded="true" signature="1625:1720" ph="INSERT INTO current_exchange_rate... " />
-                    <marker date="1494824468959" expanded="true" signature="1753:1842" ph="SELECT excha... current_exchange_rate" />
-                    <marker date="1494824468959" expanded="true" signature="1876:1965" ph="SELECT excha... current_exchange_rate" />
-                    <marker date="1494824468959" expanded="true" signature="2011:2046" ph="SELECT * FRO... current_exchange_rate" />
-                    <marker date="1494824468959" expanded="true" signature="2097:2169" ph="DELETE FROM " />
-                    <marker date="1494824468959" expanded="true" signature="2207:2299" ph="INSERT INTO temp_exchange_rate... " />
-                    <marker date="1494824468959" expanded="true" signature="2337:2423" ph="SELECT excha... temp_exchange_rate" />
-                    <marker date="1494824468959" expanded="true" signature="2474:2579" ph="INSERT INTO daily_exchange_rate... " />
-                    <marker date="1494824468959" expanded="true" signature="2626:2717" ph="SELECT * FRO... daily_exchange_rate" />
+                    <marker date="1494845009593" expanded="true" signature="57:143" ph="INSERT INTO account... " />
+                    <marker date="1494845009593" expanded="true" signature="176:253" ph="INSERT INTO account... " />
+                    <marker date="1494845009593" expanded="true" signature="287:332" ph="INSERT INTO client_tokens... " />
+                    <marker date="1494845009593" expanded="true" signature="368:507" ph="INSERT INTO options... " />
+                    <marker date="1494845009593" expanded="true" signature="537:672" ph="UPDATE optio... " />
+                    <marker date="1494845009593" expanded="true" signature="704:834" ph="INSERT INTO options... " />
+                    <marker date="1494845009593" expanded="true" signature="865:992" ph="UPDATE optio... " />
+                    <marker date="1494845009593" expanded="true" signature="1028:1150" ph="INSERT INTO options... " />
+                    <marker date="1494845009593" expanded="true" signature="1185:1303" ph="UPDATE optio... " />
+                    <marker date="1494845009593" expanded="true" signature="1330:1405" ph="SELECT * FRO... options" />
+                    <marker date="1494845009593" expanded="true" signature="1453:1483" ph="DELETE FROM " />
+                    <marker date="1494845009593" expanded="true" signature="1517:1592" ph="DELETE FROM " />
+                    <marker date="1494845009593" expanded="true" signature="1625:1720" ph="INSERT INTO current_exchange_rate... " />
+                    <marker date="1494845009593" expanded="true" signature="1753:1842" ph="SELECT excha... current_exchange_rate" />
+                    <marker date="1494845009593" expanded="true" signature="1876:1965" ph="SELECT excha... current_exchange_rate" />
+                    <marker date="1494845009593" expanded="true" signature="2011:2046" ph="SELECT * FRO... current_exchange_rate" />
+                    <marker date="1494845009593" expanded="true" signature="2170:2242" ph="DELETE FROM " />
+                    <marker date="1494845009593" expanded="true" signature="2280:2372" ph="INSERT INTO temp_exchange_rate... " />
+                    <marker date="1494845009593" expanded="true" signature="2410:2496" ph="SELECT excha... temp_exchange_rate" />
+                    <marker date="1494845009593" expanded="true" signature="2547:2652" ph="INSERT INTO daily_exchange_rate... " />
+                    <marker date="1494845009593" expanded="true" signature="2699:2790" ph="SELECT * FRO... daily_exchange_rate" />
                   </folding>
                 </state>
               </provider>
@@ -113,6 +113,7 @@
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/support/parse_and_push_thread.py" />
         <option value="$PROJECT_DIR$/database/database.py" />
+        <option value="$PROJECT_DIR$/database/query_formats.py" />
         <option value="$PROJECT_DIR$/support/exchange_rate_parser.py" />
       </list>
     </option>
@@ -588,38 +589,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/query_formats.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="121" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="121" />
+        <state relative-caret-position="527">
+          <caret line="31" column="71" lean-forward="false" selection-start-line="31" selection-start-column="71" selection-end-line="31" selection-end-column="71" />
           <folding>
-            <marker date="1494824468959" expanded="true" signature="57:143" ph="INSERT INTO account... " />
-            <marker date="1494824468959" expanded="true" signature="176:253" ph="INSERT INTO account... " />
-            <marker date="1494824468959" expanded="true" signature="287:332" ph="INSERT INTO client_tokens... " />
-            <marker date="1494824468959" expanded="true" signature="368:507" ph="INSERT INTO options... " />
-            <marker date="1494824468959" expanded="true" signature="537:672" ph="UPDATE optio... " />
-            <marker date="1494824468959" expanded="true" signature="704:834" ph="INSERT INTO options... " />
-            <marker date="1494824468959" expanded="true" signature="865:992" ph="UPDATE optio... " />
-            <marker date="1494824468959" expanded="true" signature="1028:1150" ph="INSERT INTO options... " />
-            <marker date="1494824468959" expanded="true" signature="1185:1303" ph="UPDATE optio... " />
-            <marker date="1494824468959" expanded="true" signature="1330:1405" ph="SELECT * FRO... options" />
-            <marker date="1494824468959" expanded="true" signature="1453:1483" ph="DELETE FROM " />
-            <marker date="1494824468959" expanded="true" signature="1517:1592" ph="DELETE FROM " />
-            <marker date="1494824468959" expanded="true" signature="1625:1720" ph="INSERT INTO current_exchange_rate... " />
-            <marker date="1494824468959" expanded="true" signature="1753:1842" ph="SELECT excha... current_exchange_rate" />
-            <marker date="1494824468959" expanded="true" signature="1876:1965" ph="SELECT excha... current_exchange_rate" />
-            <marker date="1494824468959" expanded="true" signature="2011:2046" ph="SELECT * FRO... current_exchange_rate" />
-            <marker date="1494824468959" expanded="true" signature="2097:2169" ph="DELETE FROM " />
-            <marker date="1494824468959" expanded="true" signature="2207:2299" ph="INSERT INTO temp_exchange_rate... " />
-            <marker date="1494824468959" expanded="true" signature="2337:2423" ph="SELECT excha... temp_exchange_rate" />
-            <marker date="1494824468959" expanded="true" signature="2474:2579" ph="INSERT INTO daily_exchange_rate... " />
-            <marker date="1494824468959" expanded="true" signature="2626:2717" ph="SELECT * FRO... daily_exchange_rate" />
+            <marker date="1494845009593" expanded="true" signature="57:143" ph="INSERT INTO account... " />
+            <marker date="1494845009593" expanded="true" signature="176:253" ph="INSERT INTO account... " />
+            <marker date="1494845009593" expanded="true" signature="287:332" ph="INSERT INTO client_tokens... " />
+            <marker date="1494845009593" expanded="true" signature="368:507" ph="INSERT INTO options... " />
+            <marker date="1494845009593" expanded="true" signature="537:672" ph="UPDATE optio... " />
+            <marker date="1494845009593" expanded="true" signature="704:834" ph="INSERT INTO options... " />
+            <marker date="1494845009593" expanded="true" signature="865:992" ph="UPDATE optio... " />
+            <marker date="1494845009593" expanded="true" signature="1028:1150" ph="INSERT INTO options... " />
+            <marker date="1494845009593" expanded="true" signature="1185:1303" ph="UPDATE optio... " />
+            <marker date="1494845009593" expanded="true" signature="1330:1405" ph="SELECT * FRO... options" />
+            <marker date="1494845009593" expanded="true" signature="1453:1483" ph="DELETE FROM " />
+            <marker date="1494845009593" expanded="true" signature="1517:1592" ph="DELETE FROM " />
+            <marker date="1494845009593" expanded="true" signature="1625:1720" ph="INSERT INTO current_exchange_rate... " />
+            <marker date="1494845009593" expanded="true" signature="1753:1842" ph="SELECT excha... current_exchange_rate" />
+            <marker date="1494845009593" expanded="true" signature="1876:1965" ph="SELECT excha... current_exchange_rate" />
+            <marker date="1494845009593" expanded="true" signature="2011:2046" ph="SELECT * FRO... current_exchange_rate" />
+            <marker date="1494845009593" expanded="true" signature="2170:2242" ph="DELETE FROM " />
+            <marker date="1494845009593" expanded="true" signature="2280:2372" ph="INSERT INTO temp_exchange_rate... " />
+            <marker date="1494845009593" expanded="true" signature="2410:2496" ph="SELECT excha... temp_exchange_rate" />
+            <marker date="1494845009593" expanded="true" signature="2547:2652" ph="INSERT INTO daily_exchange_rate... " />
+            <marker date="1494845009593" expanded="true" signature="2699:2790" ph="SELECT * FRO... daily_exchange_rate" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/support/exchange_rate_parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="106" column="20" lean-forward="false" selection-start-line="106" selection-start-column="20" selection-end-line="106" selection-end-column="20" />
+        <state relative-caret-position="718">
+          <caret line="108" column="88" lean-forward="false" selection-start-line="108" selection-start-column="88" selection-end-line="108" selection-end-column="88" />
           <folding />
         </state>
       </provider>

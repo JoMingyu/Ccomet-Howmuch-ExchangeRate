@@ -29,6 +29,7 @@ identical_code_select_format = "SELECT exchange_rate FROM current_exchange_rate 
 exchange_rate_all_select_format = "SELECT * FROM current_exchange_rate"
 
 # 환율 임시 테이블
+temp_exchange_rate_truncate_format = "TRUNCATE TABLE temp_exchange_rate"
 temp_exchange_rate_delete_format = "DELETE FROM temp_exchange_rate WHERE src_nation='%s' AND dst_nation='%s'"
 temp_exchange_rate_insert_format = "INSERT INTO temp_exchange_rate(src_nation, dst_nation, exchange_rate) VALUES('%s', '%s', %f)"
 temp_exchange_rate_select_format = "SELECT exchange_rate FROM temp_exchange_rate WHERE src_nation='%s' AND dst_nation='%s'"

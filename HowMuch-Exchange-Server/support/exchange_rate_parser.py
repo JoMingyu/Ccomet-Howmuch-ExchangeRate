@@ -104,8 +104,9 @@ class Parser:
                 if temp.day != self.last_average_date.day:
                     self.db.execute(query_formats.daily_exchange_rate_insert_format %
                                     (src_nation, dst_nation, temp.strftime('%Y-%m-%d'), average))
-                    
+
                     if src_nation in 'USD' and dst_nation in 'TRY':
+                        self.db.execute(query_formats.temp_exchange_rate_truncate_format)
                         self.last_average_date = temp
             else:
                 # temp_exchange_rate에 데이터가 없는 경우
