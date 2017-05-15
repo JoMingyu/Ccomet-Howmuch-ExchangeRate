@@ -11,7 +11,7 @@ from pymysql import IntegrityError
 class Database:
     host = 'localhost'
     user = 'root'
-    password = 'dhk0654'
+    password = ''
     db = 'howmuch_exchange'
     charset = 'utf8'
 
