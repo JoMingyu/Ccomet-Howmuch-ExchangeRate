@@ -1,13 +1,12 @@
 package com.ccomet.howmuch_exchange_app;
 
-import android.*;
 import android.Manifest;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;

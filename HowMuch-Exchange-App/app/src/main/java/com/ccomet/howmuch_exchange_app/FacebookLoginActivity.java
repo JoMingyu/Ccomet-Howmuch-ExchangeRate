@@ -47,13 +47,6 @@ public class FacebookLoginActivity extends Activity {
                             Log.d("TAG", "user : " + user.toString());
                             Log.d("TAG", "AccessToken : " + loginResult.getAccessToken().getToken());
                             setResult(RESULT_OK);
-
-                            /*
-                            Intent intent = new Intent(FacebookLoginActivity.this, MainActivity.class);
-                            //user.toString()과 AccessToken 값을 String Extra로 넘겨주어야 함
-                            startActivity(intent);
-                            finish();
-                            */
                         }
                     }
                 });
@@ -74,6 +67,14 @@ public class FacebookLoginActivity extends Activity {
                 error.printStackTrace();
             }
         });
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+
+        Intent intent = new Intent(FacebookLoginActivity.this, LoginCheck.class);
+        startActivity(intent);
     }
 
     @Override

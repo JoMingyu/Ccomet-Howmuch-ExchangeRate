@@ -23,3 +23,21 @@ class ExchangeRate(Resource):
         data = {'exchange_rate': rows[0]['exchange_rate']}
 
         return data
+
+
+class ExchangeRateAll(Resource):
+    db = database.Database()
+
+    def get(self):
+        # 전체 환율 조회
+        response_list = list()
+
+        rows = self.db.execute(query_formats.exchange_rate_all_select_format)
+        for row in rows:
+            data = {'src_nation'    : row['src_nation'],
+                    'dst_nation'    : row['dst_nation'],
+                    'exchange_rate' : row['exchange_rate']}
+
+            response_list.append(data)
+
+        return response_list
