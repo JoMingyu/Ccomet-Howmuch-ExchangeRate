@@ -1,15 +1,16 @@
+
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion '25.0.0'
-
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.ccomet.howmuch_exchange_app"
-        minSdkVersion 21
-        targetSdkVersion 24
+        minSdkVersion 23
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -20,36 +21,12 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-
-    //Dependency for Google Sign-in
-
-    //Dependencies for the REST API
-
-    //Dependency for Firebase
-
-    //Dependency for Facebook Sign in
-    compile 'com.android.support:appcompat-v7:24.2.0'
-    compile 'com.google.android.gms:play-services-auth:10.2.0'
-    compile 'com.google.api-client:google-api-client:1.22.0'
-    compile 'com.google.api-client:google-api-client-android:1.22.0'
-    compile 'com.google.apis:google-api-services-people:v1-rev4-1.22.0'
-    compile 'com.google.firebase:firebase-core:10.0.1'
-    compile 'com.facebook.android:facebook-android-sdk:4.+'
-    compile 'com.google.firebase:firebase-database:9.2.1'
-    compile 'com.google.firebase:firebase-messaging:10.0.1'
-    compile 'com.google.firebase:firebase-analytics:10.0.1'
-    compile 'com.google.android.gms:play-services-gcm:10.2.0'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.squareup.okhttp3:okhttp:3.2.0'
     testCompile 'junit:junit:4.12'
 }
-
-
-
-
-
-
-
-
-apply plugin: 'com.google.gms.google-services'

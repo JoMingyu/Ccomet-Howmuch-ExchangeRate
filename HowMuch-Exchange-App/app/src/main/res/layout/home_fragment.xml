@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?attr/actionBarSize"
+    android:orientation="vertical"
+    android:weightSum="10"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.ccomet.howmuch_exchange_app.MainActivity"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="4"
+        android:weightSum="10"
+        android:orientation="horizontal"
+        android:background="#d7d7d2">
+
+        <NumberPicker android:id="@+id/left_country_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="1.25"
+            android:scaleY="1.25"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            >
+        </NumberPicker>
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="150sp"
+            android:layout_weight="8"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+
+            <ImageButton android:id="@+id/refreshButton"
+                android:layout_width="100dp"
+                android:layout_height="75dp"
+                android:src="@drawable/exchange"
+                android:scaleType="fitCenter"
+                />
+
+            <TextView android:id="@+id/srcToDstRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="monospace"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:layout_marginBottom="5sp"
+                />
+
+        </LinearLayout>
+        <NumberPicker android:id="@+id/right_country_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleX="1.25"
+            android:scaleY="1.25"
+            android:layout_marginRight="20sp"
+            android:layout_weight="1"
+            >
+        </NumberPicker>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/bookmark_list"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_margin="20sp"
+        android:layout_weight="6"
+        android:divider="#83836d"
+        android:dividerHeight="4px"></ListView>
+</LinearLayout>
